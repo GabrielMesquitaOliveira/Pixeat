@@ -1,3 +1,4 @@
+import { CONTENT } from '@/content'
 import Image from 'next/image'
 
 export default function ContentSection() {
@@ -13,12 +14,11 @@ export default function ContentSection() {
                     </div>
 
                     <div className="relative space-y-4">
-                        <h2 className="relative z-10 max-w-xl text-4xl font-medium lg:text-5xl">The Lyra ecosystem brings together our models.</h2>
+                        <h2 className="relative z-10 max-w-xl text-4xl font-medium lg:text-5xl">{CONTENT.problem.title}</h2>
 
                         <p className="text-muted-foreground">
-                            Gemini is evolving to be more than just the models. <span className="text-accent-foreground font-bold">It supports an entire ecosystem</span> — from products innovate.
+                            {CONTENT.problem.description}
                         </p>
-                        <p className="text-muted-foreground">It supports an entire ecosystem — from products to the APIs and platforms helping developers and businesses innovate</p>
 
                         <div className="pt-6">
                             <blockquote className="border-l-4 pl-4">

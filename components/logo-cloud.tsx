@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { InfiniteSlider } from '@/components/ui/infinite-slider'
 import { ProgressiveBlur } from '@/components/ui/progressive-blur'
+import { CONTENT } from '@/content'
 
 export default function LogoCloud() {
     return (
@@ -8,7 +9,7 @@ export default function LogoCloud() {
             <div className="group relative m-auto max-w-7xl px-6">
                 <div className="flex flex-col items-center md:flex-row">
                     <div className="md:max-w-44 md:border-r md:pr-6">
-                        <p className="text-end text-sm">Powering the best teams</p>
+                        <p className="text-end text-sm">{CONTENT.clients.title}</p>
                     </div>
                     <div className="relative py-6 md:w-[calc(100%-11rem)]">
                         <InfiniteSlider

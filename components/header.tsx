@@ -8,10 +8,11 @@ import { cn } from '@/lib/utils'
 import { SignInButton, SignUpButton, UserButton } from '@clerk/nextjs'
 
 const menuItems = [
-    { name: 'Features', href: '#link' },
-    { name: 'Solution', href: '#link' },
-    { name: 'Pricing', href: '#link' },
-    { name: 'About', href: '#link' },
+    { name: 'Recursos', href: '#recursos' },
+    { name: 'Soluções', href: '#solucoes' },
+    { name: 'Preços', href: '#precos' },
+    { name: 'Sobre', href: '#sobre' },
+    { name: 'Clientes', href: '#clientes' }
 ]
 
 export const HeroHeader = () => {
@@ -50,7 +51,7 @@ export const HeroHeader = () => {
                         </div>
 
                         <div className="absolute inset-0 m-auto hidden size-fit lg:block">
-                            <ul className="flex gap-8 text-sm">
+                            <ul className="flex gap-8 text-md font-semibold">
                                 {menuItems.map((item, index) => (
                                     <li key={index}>
                                         <Link
@@ -82,14 +83,14 @@ export const HeroHeader = () => {
                                     <Button
                                         variant="outline"
                                         size="sm">
-                                        <span>Login</span>
+                                        <span>Entrar</span>
                                     </Button>
                                 </SignInButton>
                                 <SignUpButton mode="modal">
                                     <Button
                                         size="sm"
->
-                                        <span>Sign Up</span>
+                                    >
+                                        <span>Cadastrar</span>
                                     </Button>
                                 </SignUpButton>
                                 <div>

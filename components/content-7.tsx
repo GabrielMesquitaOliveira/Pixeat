@@ -1,3 +1,4 @@
+import { CONTENT } from '@/content'
 import { Cpu, Zap } from 'lucide-react'
 import Image from 'next/image'
 
@@ -7,11 +8,13 @@ export default function ContentSection() {
             <div className="mx-auto max-w-6xl space-y-8 px-6 md:space-y-16">
                 <div className="grid gap-6 sm:grid-cols-2 md:gap-12 lg:gap-24">
                     <div className="relative space-y-4">
-                        <h2 className="relative z-10 max-w-xl text-4xl font-medium lg:text-5xl">The Lyra ecosystem brings together our models.</h2>
+                        <h2 className="relative z-10 max-w-xl text-4xl font-medium lg:text-5xl">{CONTENT.solution.title}</h2>
                         <p className="text-muted-foreground">
-                            Gemini is evolving to be more than just the models. <span className="text-accent-foreground font-bold">It supports an entire ecosystem</span> — from products innovate.
+                            {CONTENT.solution.subtitle}
                         </p>
-                        <p className="text-muted-foreground">It supports an entire ecosystem — from products to the APIs and platforms helping developers and businesses innovate</p>
+                        <p className="text-muted-foreground">
+                            {CONTENT.solution.description}
+                        </p>
 
                         <div className="grid grid-cols-2 gap-3 pt-6 sm:gap-4">
                             <div className="space-y-3">
@@ -19,14 +22,14 @@ export default function ContentSection() {
                                     <Zap className="size-4" />
                                     <h3 className="text-sm font-medium">Faaast</h3>
                                 </div>
-                                <p className="text-muted-foreground text-sm">It supports an entire helping developers and innovate.</p>
+                                <p className="text-muted-foreground text-sm">{CONTENT.solution.benefits[0]}</p>
                             </div>
                             <div className="space-y-2">
                                 <div className="flex items-center gap-2">
                                     <Cpu className="size-4" />
                                     <h3 className="text-sm font-medium">Powerful</h3>
                                 </div>
-                                <p className="text-muted-foreground text-sm">It supports an entire helping developers and businesses.</p>
+                                <p className="text-muted-foreground text-sm">{CONTENT.solution.benefits[1]}</p>
                             </div>
                         </div>
                     </div>
