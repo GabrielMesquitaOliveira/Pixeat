@@ -1,10 +1,11 @@
 'use client'
 import Link from 'next/link'
-import { Logo } from '@/components/logo'
+import Image from 'next/image'
 import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import React from 'react'
 import { cn } from '@/lib/utils'
+import { SignInButton, SignUpButton, UserButton } from '@clerk/nextjs'
 
 const menuItems = [
     { name: 'Features', href: '#link' },
@@ -28,15 +29,15 @@ export const HeroHeader = () => {
         <header>
             <nav
                 data-state={menuState && 'active'}
-                className="fixed z-20 w-full px-2">
-                <div className={cn('mx-auto mt-2 max-w-6xl px-6 transition-all duration-300 lg:px-12', isScrolled && 'bg-background/50 max-w-4xl rounded-2xl border backdrop-blur-lg lg:px-5')}>
+                className="fixed z-10 w-full px-2">
+                <div className={cn('mx-auto mt-2 max-w-7xl px-6 transition-all duration-300 lg:px-12', isScrolled && 'bg-background/50 max-w-6xl rounded-2xl border backdrop-blur-lg lg:px-5')}>
                     <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
                         <div className="flex w-full justify-between lg:w-auto">
                             <Link
                                 href="/"
                                 aria-label="home"
                                 className="flex items-center space-x-2">
-                                <Logo />
+                                <Image src="/logo.svg" alt="Logo" width={120} height={80} />
                             </Link>
 
                             <button
@@ -77,31 +78,23 @@ export const HeroHeader = () => {
                                 </ul>
                             </div>
                             <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
-                                <Button
-                                    asChild
-                                    variant="outline"
-                                    size="sm"
-                                    className={cn(isScrolled && 'lg:hidden')}>
-                                    <Link href="#">
+                                <SignInButton mode="modal">
+                                    <Button
+                                        variant="outline"
+                                        size="sm">
                                         <span>Login</span>
-                                    </Link>
-                                </Button>
-                                <Button
-                                    asChild
-                                    size="sm"
-                                    className={cn(isScrolled && 'lg:hidden')}>
-                                    <Link href="#">
+                                    </Button>
+                                </SignInButton>
+                                <SignUpButton mode="modal">
+                                    <Button
+                                        size="sm"
+>
                                         <span>Sign Up</span>
-                                    </Link>
-                                </Button>
-                                <Button
-                                    asChild
-                                    size="sm"
-                                    className={cn(isScrolled ? 'lg:inline-flex' : 'hidden')}>
-                                    <Link href="#">
-                                        <span>Get Started</span>
-                                    </Link>
-                                </Button>
+                                    </Button>
+                                </SignUpButton>
+                                <div>
+                                    <UserButton afterSignOutUrl="/" />
+                                </div>
                             </div>
                         </div>
                     </div>

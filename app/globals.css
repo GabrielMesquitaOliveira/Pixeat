@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import '@clerk/themes/shadcn.css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -118,5 +119,14 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+  .cl-rootBox{
+    @apply flex justify-center py-16;
+  }
+  .cl-pricingTable{
+    @apply max-w-6xl px-6;
+  }
+  .cl-drawerRoot{
+    @apply z-50 fixed;
   }
 }
