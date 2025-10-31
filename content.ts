@@ -4,11 +4,11 @@ export const CONTENT = {
   // Hero Section
   hero: {
     eyebrow: "AUTOATENDIMENTO INTELIGENTE",
-    headline: "Pedidos por QR Code que seus clientes vão amar",
+    headline: "Receba pedidos por QR Code, tablet e garçom.",
     subheadline:
       "Cardápio digital interativo na mesa + reservas online automáticas. Reduza tempo de espera, elimine erros nos pedidos e aumente suas vendas em até 40%.",
     cta: {
-      primary: "Começar Grátis por 30 Dias",
+      primary: "Começar Grátis",
       secondary: "Ver Demonstração",
     },
     trustBadges: [
@@ -113,7 +113,7 @@ export const CONTENT = {
   // Como Funciona
   howItWorks: {
     title: "Como funciona na prática",
-    description: "Implementar tecnologia no seu restaurante não precisa ser complicado. Com o Pixeat, em apenas 3 passos simples você transforma completamente a experiência dos seus clientes e a eficiência da sua operação. Não é necessário nenhum equipamento especial, treinamento complexo ou mudanças drásticas nos seus processos. Veja como é fácil começar a usar o Pixeat e começar a ver resultados desde o primeiro dia.",
+    description: "Implementar tecnologia no seu restaurante não precisa ser complicado. Com o Pixeat, em apenas 3 passos simples você transforma completamente a experiência dos seus clientes e a eficiência da sua operação.",
     steps: [
       {
         step: "01",
@@ -199,6 +199,15 @@ export const CONTENT = {
         image: "/images/testimonial-3.jpg",
         rating: 5,
       },
+      {
+        quote:
+          "Minha equipe ficou mais produtiva. Antes ficavam correndo de mesa em mesa anotando pedidos, agora focam em atender bem e os pedidos chegam direto na cozinha.",
+        author: "Patricia Mendes",
+        role: "Dona",
+        company: "Bistrô da Praça",
+        image: "/images/testimonial-3.jpg",
+        rating: 5,
+      },
     ],
   },
 
@@ -266,46 +275,55 @@ export const CONTENT = {
     description: "Sabemos que implementar uma nova tecnologia no seu restaurante gera dúvidas. Reunimos aqui as perguntas mais comuns que recebemos de donos e gerentes como você. Se mesmo assim alguma questão permanecer sem resposta, nossa equipe de suporte está sempre disponível para ajudar você a entender como o Pixeat pode se encaixar perfeitamente na realidade do seu negócio e resolver seus desafios específicos.",
     questions: [
       {
+        id: "item-1",
         question: "Como funciona o período de teste gratuito?",
         answer:
           "Você tem 30 dias para testar todas as funcionalidades do Pixeat sem pagar nada. Não pedimos cartão de crédito no cadastro. Após o período, você escolhe o plano que melhor se encaixa.",
       },
       {
+        id: "item-2",
         question: "Preciso de equipamentos especiais?",
         answer:
           "Não! Seus clientes usam o próprio celular para escanear o QR Code. Você só precisa de um computador ou tablet para acessar o painel administrativo e gerenciar os pedidos.",
       },
       {
+        id: "item-3",
         question: "E se meus clientes não souberem usar?",
         answer:
           "O sistema é extremamente intuitivo - qualquer pessoa que usa WhatsApp consegue fazer um pedido. Além disso, fornecemos materiais educativos para colocar na mesa explicando o passo a passo.",
       },
       {
+        id: "item-4",
         question: "Posso cancelar a qualquer momento?",
         answer:
           "Sim! Não temos fidelidade ou multa por cancelamento. Você pode cancelar quando quiser direto no painel, e o sistema continua funcionando até o fim do período pago.",
       },
       {
+        id: "item-5",
         question: "Como funciona o suporte?",
         answer:
           "Oferecemos suporte por email, chat e WhatsApp em horário comercial. Planos Professional e Enterprise têm suporte prioritário. Também temos uma base de conhecimento completa com tutoriais em vídeo.",
       },
       {
+        id: "item-6",
         question: "Posso personalizar o cardápio com minha marca?",
         answer:
           "Sim! Você pode adicionar seu logo, escolher as cores da sua marca, organizar categorias do jeito que quiser e incluir fotos profissionais dos seus pratos.",
       },
       {
+        id: "item-7",
         question: "O sistema funciona sem internet?",
         answer:
           "O Pixeat precisa de conexão com internet para funcionar. Recomendamos ter um Wi-Fi estável no restaurante. Os clientes podem usar dados móveis ou se conectar ao Wi-Fi do estabelecimento.",
       },
       {
+        id: "item-8",
         question: "Quanto tempo leva para implementar?",
         answer:
           "Em 24 horas seu restaurante está funcionando! Nós configuramos tudo, geramos os QR Codes, fazemos um treinamento rápido com sua equipe e você já pode começar a usar.",
       },
     ],
+    contact: "Não achou o que está procurando?, entre em contato pelo whatsapp"
   },
 
   // CTA Final
@@ -314,7 +332,7 @@ export const CONTENT = {
     description:
       "Milhares de pedidos já foram realizados através do Pixeat, centenas de restaurantes já transformaram a experiência dos seus clientes, e agora é a sua vez. Não fique para trás enquanto seus concorrentes oferecem uma experiência moderna e eficiente. Comece hoje mesmo, teste gratuitamente por 30 dias e descubra como é fácil aumentar suas vendas, reduzir custos operacionais e encantar seus clientes com tecnologia inteligente. Sem complicação, sem burocracia, sem riscos.",
     cta: {
-      primary: "Começar Grátis por 30 Dias",
+      primary: "Começar Grátis",
       secondary: "Agendar uma Demonstração",
     },
     features: ["✓ Sem cartão de crédito", "✓ Implementação em 24h", "✓ Suporte em português"],

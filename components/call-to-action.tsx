@@ -1,20 +1,21 @@
 import { Button } from '@/components/ui/button'
+import { CONTENT } from '@/content'
 import Link from 'next/link'
 
 export default function CallToAction() {
     return (
         <section className="py-16 md:py-32">
-            <div className="mx-auto max-w-5xl px-6">
+            <div className="mx-auto max-w-6xl px-6">
                 <div className="text-center">
-                    <h2 className="text-balance text-4xl font-semibold lg:text-5xl">Start Building</h2>
-                    <p className="mt-4">Libero sapiente aliquam quibusdam aspernatur.</p>
+                    <h2 className="text-balance text-4xl font-semibold lg:text-5xl">{CONTENT.ctaFinal.title}</h2>
+                    <p className="mt-4">{CONTENT.ctaFinal.description}</p>
 
                     <div className="mt-12 flex flex-wrap justify-center gap-4">
                         <Button
                             asChild
                             size="lg">
                             <Link href="/">
-                                <span>Get Started</span>
+                                <span>{CONTENT.ctaFinal.cta.primary}</span>
                             </Link>
                         </Button>
 
@@ -23,7 +24,7 @@ export default function CallToAction() {
                             size="lg"
                             variant="outline">
                             <Link href="/">
-                                <span>Book Demo</span>
+                                <span>{CONTENT.ctaFinal.cta.secondary}</span>
                             </Link>
                         </Button>
                     </div>

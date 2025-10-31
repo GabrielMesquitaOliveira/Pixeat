@@ -1,4 +1,4 @@
-'use client'
+ 'use client'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Menu, X } from 'lucide-react'
@@ -6,14 +6,7 @@ import { Button } from '@/components/ui/button'
 import React from 'react'
 import { cn } from '@/lib/utils'
 import { SignInButton, SignUpButton, UserButton } from '@clerk/nextjs'
-
-const menuItems = [
-    { name: 'Recursos', href: '#recursos' },
-    { name: 'Soluções', href: '#solucoes' },
-    { name: 'Preços', href: '#precos' },
-    { name: 'Sobre', href: '#sobre' },
-    { name: 'Clientes', href: '#clientes' }
-]
+import { menuItems } from './menu'
 
 export const HeroHeader = () => {
     const [menuState, setMenuState] = React.useState(false)
@@ -30,7 +23,7 @@ export const HeroHeader = () => {
         <header>
             <nav
                 data-state={menuState && 'active'}
-                className="fixed z-10 w-full px-2">
+                className="fixed z-10 w-full px-2 z-50">
                 <div className={cn('mx-auto mt-2 max-w-7xl px-6 transition-all duration-300 lg:px-12', isScrolled && 'bg-background/50 max-w-6xl rounded-2xl border backdrop-blur-lg lg:px-5')}>
                     <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
                         <div className="flex w-full justify-between lg:w-auto">

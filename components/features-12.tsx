@@ -52,7 +52,9 @@ export default function Features() {
                                     {CONTENT.features.list[0].title}
                                 </div>
                             </AccordionTrigger>
-                            <AccordionContent>Lyra is evolving to be more than just the models. It supports an entire to the APIs and platforms helping developers and businesses innovate.</AccordionContent>
+                            <AccordionContent>
+                                {CONTENT.features.list[0].description}
+                            </AccordionContent>
                         </AccordionItem>
                         <AccordionItem value="item-2">
                             <AccordionTrigger>
@@ -61,7 +63,9 @@ export default function Features() {
                                     {CONTENT.features.list[1].title}
                                 </div>
                             </AccordionTrigger>
-                            <AccordionContent>Lyra is evolving to be more than just the models. It supports an entire to the APIs and platforms helping developers and businesses innovate.</AccordionContent>
+                            <AccordionContent>
+                                {CONTENT.features.list[1].description}
+                            </AccordionContent>
                         </AccordionItem>
                         <AccordionItem value="item-3">
                             <AccordionTrigger>
@@ -70,7 +74,9 @@ export default function Features() {
                                     {CONTENT.features.list[2].title}
                                 </div>
                             </AccordionTrigger>
-                            <AccordionContent>Lyra is evolving to be more than just the models. It supports an entire to the APIs and platforms helping developers and businesses innovate.</AccordionContent>
+                            <AccordionContent>
+                                {CONTENT.features.list[2].description}
+                            </AccordionContent>
                         </AccordionItem>
                         <AccordionItem value="item-4">
                             <AccordionTrigger>
@@ -79,7 +85,9 @@ export default function Features() {
                                     {CONTENT.features.list[3].title}
                                 </div>
                             </AccordionTrigger>
-                            <AccordionContent>Lyra is evolving to be more than just the models. It supports an entire to the APIs and platforms helping developers and businesses innovate.</AccordionContent>
+                            <AccordionContent>
+                                {CONTENT.features.list[3].description}
+                            </AccordionContent>
                         </AccordionItem>
                     </Accordion>
 
