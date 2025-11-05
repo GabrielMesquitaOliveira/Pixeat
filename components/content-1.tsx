@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export default function ContentSection() {
     return (
-        <section className="py-16 md:py-32">
+        <section id="problemas" className="py-16 md:py-32">
             <div className="mx-auto max-w-6xl space-y-8 px-6 md:space-y-16">
                 <div className="grid gap-6 sm:grid-cols-2 md:gap-12 lg:gap-24">
                     <div className="relative mb-6 sm:mb-0">
@@ -26,7 +26,7 @@ export default function ContentSection() {
 
                                 <div className="mt-6 space-y-3">
                                     <cite className="block font-medium">John Doe, CEO</cite>
-                                    <img className="h-5 w-fit dark:invert" src="https://html.tailus.io/blocks/customers/nvidia.svg" alt="Nvidia Logo" height="20" width="auto" />
+                                        <img className="h-5 w-fit dark:invert" src="https://html.tailus.io/blocks/customers/nvidia.svg" alt="Nvidia Logo" height="20" width="auto" />
                                 </div>
                             </blockquote>
                         </div>

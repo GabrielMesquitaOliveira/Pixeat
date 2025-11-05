@@ -1,11 +1,10 @@
-import { Cpu, Lock, Sparkles, Zap } from 'lucide-react'
-import Image from 'next/image'
+import { Cpu, Lock, Zap } from 'lucide-react'
 import { HeroVideoDialog } from './ui/hero-video-dialog'
 import { CONTENT } from '@/content'
 
 export default function FeaturesSection() {
     return (
-        <section className="py-16 md:py-32">
+        <section id="solucoes" className="py-16 md:py-32">
             <div className="mx-auto max-w-6xl space-y-12 px-6">
                 <div className="relative z-10 grid items-center gap-4 md:grid-cols-2 md:gap-12">
                     <h2 className="text-4xl font-semibold">{CONTENT.howItWorks.title}</h2>

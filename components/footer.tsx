@@ -1,15 +1,16 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { menuItems } from './menu'
 
 export default function FooterSection() {
     return (
-        <footer className="py-16 md:py-32">
+        <footer id="sobre" className="py-16 md:py-32">
             <div className="mx-auto max-w-5xl px-6">
                 <Link
                     href="/"
                     aria-label="go home"
                     className="mx-auto block size-fit">
-                    <img src="/logo.svg" alt="" />
+                    <Image src="/logo.svg" alt="" width={120} height={40} />
                 </Link>
 
                 <div className="my-8 flex flex-wrap justify-center gap-6 text-sm">

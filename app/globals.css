@@ -130,3 +130,14 @@
     @apply z-50 fixed;
   }
 }
+
+html {
+  scroll-behavior: smooth;
+  /* fallback spacing for fragment navigation */
+  scroll-padding-top: var(--header-offset);
+}
+
+/* Ensure anchored sections don't hide under the fixed header */
+section[id] {
+  scroll-margin-top: calc(var(--header-offset) + 0.5rem);
+}

@@ -1,9 +1,12 @@
+// Menu items ordered to match the landing page sections as they appear in `app/page.tsx`
 export const menuItems = [
+    { name: 'Problema', href: '#problemas' },
     { name: 'Recursos', href: '#recursos' },
-    { name: 'Soluções', href: '#solucoes' },
+    { name: 'Resultados', href: '#resultados' },
+    { name: 'Depoimentos', href: '#depoimentos' },
     { name: 'Preços', href: '#precos' },
-    { name: 'Sobre', href: '#sobre' },
-    { name: 'Clientes', href: '#clientes' },
+    { name: 'FAQ', href: '#faq' },
+    { name: 'Contato', href: '#cta' },
 ]
 
 export default menuItems
