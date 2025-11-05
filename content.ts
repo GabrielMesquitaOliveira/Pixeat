@@ -220,9 +220,10 @@ export const CONTENT = {
       {
         name: "Starter",
         description: "Para restaurantes começando",
-        price: "R$ 97",
+        price: "R$ 0",
         period: "/mês",
         features: [
+          "Até 200 pedidos/mês",
           "Até 5 mesas",
           "Cardápio digital ilimitado",
           "Sistema de reservas",
@@ -235,9 +236,10 @@ export const CONTENT = {
       {
         name: "Professional",
         description: "Mais popular entre restaurantes",
-        price: "R$ 197",
+        price: "R$ 49",
         period: "/mês",
         features: [
+          "Até 500 pedidos/mês",
           "Até 20 mesas",
           "Tudo do Starter +",
           "Notificações WhatsApp",
@@ -252,9 +254,10 @@ export const CONTENT = {
       {
         name: "Enterprise",
         description: "Para redes e grandes operações",
-        price: "Sob consulta",
+        price: "R$ 99",
         period: "",
         features: [
+          "Pedidos ilimitados",
           "Mesas ilimitadas",
           "Tudo do Professional +",
           "Múltiplas unidades",

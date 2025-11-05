@@ -7,9 +7,9 @@ import FeaturesSection from "@/components/features-6";
 import FooterSection from "@/components/footer";
 import HeroSection from "@/components/hero-section";
 import LogoCloud from "@/components/logo-cloud";
+import Pricing from "@/components/pricing";
 import StatsSection from "@/components/stats-2";
 import Testimonials from "@/components/testimonials";
-import { PricingTable } from "@clerk/nextjs";
 
 export default function Home() {
   return (
@@ -22,7 +22,7 @@ export default function Home() {
       <FeaturesSection/>
       <StatsSection/>
       <Testimonials/>
-      <PricingTable for="organization" ctaPosition="bottom"/>
+      <Pricing/>
       <FAQsFour/>
       <CallToAction/>
       <FooterSection/>
