@@ -10,10 +10,12 @@ import LogoCloud from "@/components/logo-cloud";
 import Pricing from "@/components/pricing";
 import StatsSection from "@/components/stats-2";
 import Testimonials from "@/components/testimonials";
+import { HeroHeader } from '@/components/header'
 
 export default function Home() {
   return (
     <>
+      <HeroHeader />
       <HeroSection/>
       <LogoCloud/>
       <ContentSection/>

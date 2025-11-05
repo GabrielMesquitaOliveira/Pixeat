@@ -5,7 +5,7 @@ import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import React from 'react'
 import { cn } from '@/lib/utils'
-import { SignInButton, SignUpButton, UserButton } from '@clerk/nextjs'
+import { SignInButton, SignUpButton, UserButton, useUser } from '@clerk/nextjs'
 import { menuItems } from './menu'
 
 export const HeroHeader = () => {
@@ -19,6 +19,7 @@ export const HeroHeader = () => {
         window.addEventListener('scroll', handleScroll)
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
+    const { isSignedIn } = useUser()
     return (
         <header>
             <nav
@@ -72,23 +73,33 @@ export const HeroHeader = () => {
                                 </ul>
                             </div>
                             <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
-                                <SignInButton mode="modal">
-                                    <Button
-                                        variant="outline"
-                                        size="sm">
-                                        <span>Entrar</span>
-                                    </Button>
-                                </SignInButton>
-                                <SignUpButton mode="modal">
-                                    <Button
-                                        size="sm"
-                                    >
-                                        <span>Cadastrar</span>
-                                    </Button>
-                                </SignUpButton>
-                                <div>
-                                    <UserButton afterSignOutUrl="/" />
-                                </div>
+                                {isSignedIn ? (
+                                    <>
+                                        <Button asChild size="sm">
+                                            <Link href="/dashboard">Dashboard</Link>
+                                        </Button>
+                                        <div>
+                                            <UserButton afterSignOutUrl="/" />
+                                        </div>
+                                    </>
+                                ) : (
+                                    <>
+                                        <SignInButton mode="modal">
+                                            <Button
+                                                variant="outline"
+                                                size="sm">
+                                                <span>Entrar</span>
+                                            </Button>
+                                        </SignInButton>
+                                        <SignUpButton mode="modal">
+                                            <Button
+                                                size="sm"
+                                            >
+                                                <span>Cadastrar</span>
+                                            </Button>
+                                        </SignUpButton>
+                                    </>
+                                )}
                             </div>
                         </div>
                     </div>

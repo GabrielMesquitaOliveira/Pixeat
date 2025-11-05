@@ -4,7 +4,7 @@ import {
 } from '@clerk/nextjs'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
-import { HeroHeader } from '@/components/header'
+// Header moved to landing-specific pages so dashboard isn't affected
 import { ptBR } from '@clerk/localizations'
 import {shadcn} from '@clerk/themes'
 
@@ -34,7 +34,6 @@ export default function RootLayout({
     }}>
       <html lang="en">
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-          <HeroHeader />
           {children}
         </body>
       </html>
