@@ -4,7 +4,7 @@ import { ChartBarIncreasingIcon, Database, Fingerprint, IdCard } from 'lucide-re
 import Image from 'next/image'
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
-import { BorderBeam } from './ui/border-beam'
+import { BorderBeam } from '../ui/border-beam'
 import { CONTENT } from '@/content'
 
 export default function Features() {

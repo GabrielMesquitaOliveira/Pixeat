@@ -1,6 +1,6 @@
 import { Cpu, Lock, Zap } from 'lucide-react'
-import { HeroVideoDialog } from './ui/hero-video-dialog'
 import { CONTENT } from '@/content'
+import { HeroVideoDialog } from '../ui/hero-video-dialog'
 
 export default function FeaturesSection() {
     return (
