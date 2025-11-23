@@ -10,7 +10,7 @@ export default function Testimonials() {
         <section id="depoimentos" className="py-16 md:py-32">
             <div className="mx-auto max-w-6xl space-y-8 px-6 md:space-y-16">
                 <div className="relative z-10 mx-auto max-w-xl space-y-6 text-center md:space-y-12">
-                    <h2 className="text-4xl font-medium lg:text-5xl">{CONTENT.testimonials.title}</h2>
+                    <h2 className="text-4xl font-medium lg:text-5xl mb-6">{CONTENT.testimonials.title}</h2>
                     <p>{CONTENT.testimonials.description}</p>
                 </div>
 
