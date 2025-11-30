@@ -12,14 +12,14 @@ export default function Pricing() {
             <div className="mx-auto max-w-6xl px-6">
                 <div className="mx-auto max-w-2xl space-y-6 text-center">
                     <h2 className="text-center text-4xl font-semibold lg:text-5xl">{pricing.title}</h2>
-                    <p>{pricing.description}</p>
+                    <p className="text-lg text-muted-foreground">{pricing.description}</p>
                     {pricing.badge ? (
                         <div className="mt-2 text-sm font-medium text-emerald-600">{pricing.badge}</div>
                     ) : null}
                 </div>
 
                 <div className="mt-8 grid gap-6 md:mt-20 md:grid-cols-3">
-                      {pricing.plans.map((plan) => {
+                    {pricing.plans.map((plan) => {
                         const isHighlighted = !!plan.highlighted
                         return (
                             <Card
@@ -30,7 +30,7 @@ export default function Pricing() {
                                 ) : null}
 
                                 <CardHeader>
-                                    <CardTitle className="font-medium">{plan.name}</CardTitle>
+                                    <CardTitle>{plan.name}</CardTitle>
                                     <span className="my-3 block text-2xl font-semibold">{plan.price} <span className="text-base font-normal">{plan.period}</span></span>
                                     <CardDescription className="text-sm">{plan.description}</CardDescription>
                                 </CardHeader>

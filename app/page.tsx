@@ -17,7 +17,7 @@ export default function Home() {
     <>
       <HeroHeader />
       <HeroSection />
-      <LogoCloud />
+      {/* <LogoCloud /> */}
       <ContentSection />
       <ContentSection2 />
       <Features />

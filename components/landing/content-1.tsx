@@ -14,7 +14,7 @@ export default function ContentSection() {
                     </div>
 
                     <div className="relative space-y-4">
-                        <h2 className="relative z-10 max-w-xl text-4xl font-medium lg:text-5xl">{CONTENT.problem.title}</h2>
+                        <h2 className="relative z-10 max-w-xl text-4xl font-semibold lg:text-5xl">{CONTENT.problem.title}</h2>
 
                         <p className="text-muted-foreground">
                             {CONTENT.problem.description}
@@ -26,7 +26,7 @@ export default function ContentSection() {
 
                                 <div className="mt-6 space-y-3">
                                     <cite className="block font-medium">John Doe, CEO</cite>
-                                        <img className="h-5 w-fit dark:invert" src="https://html.tailus.io/blocks/customers/nvidia.svg" alt="Nvidia Logo" height="20" width="auto" />
+                                    <img className="h-5 w-fit dark:invert" src="https://html.tailus.io/blocks/customers/nvidia.svg" alt="Nvidia Logo" height="20" width="auto" />
                                 </div>
                             </blockquote>
                         </div>

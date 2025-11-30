@@ -104,7 +104,7 @@ export default function HeroSection() {
                                     preset="fade-in-blur"
                                     speedSegment={0.3}
                                     as="h1"
-                                    className="mx-auto mt-8 max-w-6xl text-balance text-5xl max-md:font-bold md:text-7xl lg:mt-16 xl:text-[5.25rem]">
+                                    className="mx-auto mt-8 max-w-6xl text-balance text-5xl font-semibold md:text-7xl lg:mt-16 xl:text-[5.25rem]">
                                     {CONTENT.hero.headline}
                                 </TextEffect>
                                 <TextEffect
@@ -113,7 +113,7 @@ export default function HeroSection() {
                                     speedSegment={0.3}
                                     delay={0.5}
                                     as="p"
-                                    className="mx-auto mt-8 max-w-2xl text-balance text-lg">
+                                    className="mx-auto mt-8 max-w-2xl text-balance text-lg text-muted-foreground">
                                     {CONTENT.hero.subheadline}
                                 </TextEffect>
 
@@ -171,18 +171,18 @@ export default function HeroSection() {
                             <div className="mask-b-from-55% relative -mr-56 mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-12 md:mt-20">
                                 <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
                                     <Image
-                                        className="bg-background aspect-15/8 relative hidden rounded-2xl dark:block"
-                                        src="/dash.webp"
+                                        className="bg-background aspect-video relative hidden rounded-2xl dark:block"
+                                        src="/Dashboard.png"
                                         alt="app screen"
                                         width="2700"
-                                        height="1440"
+                                        height="1680"
                                     />
                                     <Image
-                                        className="z-2 border-border/25 aspect-15/8 relative rounded-2xl border dark:hidden"
-                                        src="/dash.webp"
+                                        className="z-2 border-border/25 aspect-video relative rounded-2xl border dark:hidden"
+                                        src="/Dashboard.png"
                                         alt="app screen"
                                         width="2700"
-                                        height="1440"
+                                        height="1680"
                                     />
                                 </div>
                             </div>

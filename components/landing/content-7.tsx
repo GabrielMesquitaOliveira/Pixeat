@@ -8,7 +8,7 @@ export default function ContentSection() {
             <div className="mx-auto max-w-6xl space-y-8 px-6 md:space-y-16">
                 <div className="grid gap-6 sm:grid-cols-2 md:gap-12 lg:gap-24">
                     <div className="relative space-y-4">
-                        <h2 className="relative z-10 max-w-xl text-4xl font-medium lg:text-5xl">{CONTENT.solution.title}</h2>
+                        <h2 className="relative z-10 max-w-xl text-4xl font-semibold lg:text-5xl">{CONTENT.solution.title}</h2>
                         <p className="text-muted-foreground">
                             {CONTENT.solution.subtitle}
                         </p>
@@ -20,14 +20,14 @@ export default function ContentSection() {
                             <div className="space-y-3">
                                 <div className="flex items-center gap-2">
                                     <Zap className="size-4" />
-                                    <h3 className="text-sm font-medium">Faaast</h3>
+                                    <h3 className="text-base font-medium">Faaast</h3>
                                 </div>
                                 <p className="text-muted-foreground text-sm">{CONTENT.solution.benefits[0]}</p>
                             </div>
-                            <div className="space-y-2">
+                            <div className="space-y-3">
                                 <div className="flex items-center gap-2">
                                     <Cpu className="size-4" />
-                                    <h3 className="text-sm font-medium">Powerful</h3>
+                                    <h3 className="text-base font-medium">Powerful</h3>
                                 </div>
                                 <p className="text-muted-foreground text-sm">{CONTENT.solution.benefits[1]}</p>
                             </div>

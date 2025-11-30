@@ -8,7 +8,7 @@ export default function CallToAction() {
             <div className="mx-auto max-w-6xl px-6">
                 <div className="text-center">
                     <h2 className="text-balance text-4xl font-semibold lg:text-5xl">{CONTENT.ctaFinal.title}</h2>
-                    <p className="mt-4">{CONTENT.ctaFinal.description}</p>
+                    <p className="mt-6 text-lg text-muted-foreground">{CONTENT.ctaFinal.description}</p>
 
                     <div className="mt-12 flex flex-wrap justify-center gap-4">
                         <Button

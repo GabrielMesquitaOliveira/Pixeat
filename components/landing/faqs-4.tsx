@@ -6,10 +6,10 @@ import { CONTENT } from '@/content'
 
 export default function FAQsFour() {
     return (
-        <section id="faq" className="py-16 md:py-24">
+        <section id="faq" className="py-16 md:py-32">
             <div className="mx-auto max-w-6xl px-4 md:px-6">
                 <div className="mx-auto max-w-xl text-center">
-                    <h2 className="text-balance text-3xl font-bold md:text-4xl lg:text-5xl">{CONTENT.faq.title}</h2>
+                    <h2 className="text-balance text-3xl font-semibold md:text-4xl lg:text-5xl">{CONTENT.faq.title}</h2>
                     <p className="text-muted-foreground mt-4 text-balance">{CONTENT.faq.description}</p>
                 </div>
 
