@@ -13,7 +13,7 @@ export default function Features() {
 
     const images = {
         'item-1': {
-            image: '/image3.webp',
+            image: '/software/Cardapio.png',
             alt: 'Database visualization',
         },
         'item-2': {
@@ -93,7 +93,7 @@ export default function Features() {
 
                     <div className="bg-background relative flex overflow-hidden rounded-3xl border p-2">
                         <div className="w-15 absolute inset-0 right-0 ml-auto border-l bg-[repeating-linear-gradient(-45deg,var(--color-border),var(--color-border)_1px,transparent_1px,transparent_8px)]"></div>
-                        <div className="aspect-76/59 bg-background relative w-[calc(3/4*100%+3rem)] rounded-2xl">
+                        <div className="bg-background relative w-[calc(3/4*100%+3rem)] rounded-2xl">
                             <AnimatePresence mode="wait">
                                 <motion.div
                                     key={`${activeItem}-id`}

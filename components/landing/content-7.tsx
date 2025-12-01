@@ -20,14 +20,14 @@ export default function ContentSection() {
                             <div className="space-y-3">
                                 <div className="flex items-center gap-2">
                                     <Zap className="size-4" />
-                                    <h3 className="text-base font-medium">Faaast</h3>
+                                    <h3 className="text-base font-medium">Rápido</h3>
                                 </div>
                                 <p className="text-muted-foreground text-sm">{CONTENT.solution.benefits[0]}</p>
                             </div>
                             <div className="space-y-3">
                                 <div className="flex items-center gap-2">
                                     <Cpu className="size-4" />
-                                    <h3 className="text-base font-medium">Powerful</h3>
+                                    <h3 className="text-base font-medium">Robusto</h3>
                                 </div>
                                 <p className="text-muted-foreground text-sm">{CONTENT.solution.benefits[1]}</p>
                             </div>
