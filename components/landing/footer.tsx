@@ -4,7 +4,7 @@ import { menuItems } from './menu'
 
 export default function FooterSection() {
     return (
-        <footer id="sobre" className="py-16 md:py-32">
+        <footer id="sobre" className="py-16 md:py-24">
             <div className="mx-auto max-w-5xl px-6">
                 <Link
                     href="/"

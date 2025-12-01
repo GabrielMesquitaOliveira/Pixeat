@@ -8,7 +8,7 @@ export default function Pricing() {
     const { pricing } = CONTENT
 
     return (
-        <section id="precos" className="py-16 md:py-32">
+        <section id="precos" className="py-16 md:py-24">
             <div className="mx-auto max-w-6xl px-6">
                 <div className="mx-auto max-w-2xl space-y-6 text-center">
                     <h2 className="text-center text-4xl font-semibold lg:text-5xl">{pricing.title}</h2>

@@ -7,7 +7,7 @@ type Testimonial = (typeof CONTENT)['testimonials']['list'][number]
 
 export default function Testimonials() {
     return (
-        <section id="depoimentos" className="py-16 md:py-32">
+        <section id="depoimentos" className="py-16 md:py-24">
             <div className="mx-auto max-w-6xl space-y-8 px-6 md:space-y-16">
                 <div className="relative z-10 mx-auto max-w-xl space-y-6 text-center">
                     <h2 className="text-4xl font-semibold lg:text-5xl">{CONTENT.testimonials.title}</h2>

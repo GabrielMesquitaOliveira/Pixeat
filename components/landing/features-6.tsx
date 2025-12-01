@@ -4,7 +4,7 @@ import { HeroVideoDialog } from '../ui/hero-video-dialog'
 
 export default function FeaturesSection() {
     return (
-        <section id="solucoes" className="py-16 md:py-32">
+        <section id="solucoes" className="py-16 md:py-24">
             <div className="mx-auto max-w-6xl space-y-12 px-6">
                 <div className="relative z-10 grid items-center gap-4 md:grid-cols-2 md:gap-12">
                     <h2 className="text-4xl font-semibold">{CONTENT.howItWorks.title}</h2>
