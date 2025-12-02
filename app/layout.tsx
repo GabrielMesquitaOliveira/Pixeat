@@ -24,6 +24,15 @@ export const metadata: Metadata = {
     template: '%s | Pixeat',
   },
   metadataBase: new URL('https://pixeat.com.br'),
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/icon.svg', type: 'image/svg+xml' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png' },
+    ],
+  },
   robots: {
     index: false,
     follow: false,
