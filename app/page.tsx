@@ -11,6 +11,15 @@ import Pricing from "@/components/landing/pricing";
 import StatsSection from "@/components/landing/stats-2";
 import Testimonials from "@/components/landing/testimonials";
 import { HeroHeader } from '@/components/landing/header'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Pixeat - Autoatendimento Inteligente para Restaurantes | QR Code e Reservas Online',
+  description: 'Sistema de autoatendimento completo para restaurantes. Cardápio digital por QR Code, reservas online automáticas e gestão de pedidos em tempo real. Aumente suas vendas em até 40%. Teste grátis por 30 dias.',
+  alternates: {
+    canonical: '/',
+  },
+}
 
 export default function Home() {
   return (
