@@ -247,7 +247,6 @@ export const CONTENT = {
         period: "/mês • por tempo limitado",
         features: [
           "Até 200 pedidos/mês",
-          "Até 5 mesas com QR Code",
           "Cardápio digital ilimitado",
           "Sistema de reservas online",
           "Suporte por email",
@@ -269,7 +268,6 @@ export const CONTENT = {
         discount: "50% OFF nos 3 primeiros meses",
         features: [
           "Até 500 pedidos/mês",
-          "Até 20 mesas com QR Code",
           "Tudo do plano Starter +",
           "Notificações automáticas por WhatsApp",
           "Suporte prioritário por chat",
@@ -291,7 +289,6 @@ export const CONTENT = {
         period: "/mês por unidade",
         features: [
           "Pedidos ilimitados",
-          "Mesas ilimitadas",
           "Tudo do plano Professional +",
           "Gestão de múltiplas unidades",
           "Gerente de conta dedicado",
