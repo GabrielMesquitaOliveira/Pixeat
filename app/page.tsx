@@ -91,7 +91,7 @@ export default function Home() {
       <FeaturesSection />
       <Features />
       <StatsSection />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <Pricing />
       <FAQsFour />
       <CallToAction />
