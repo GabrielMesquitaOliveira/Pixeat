@@ -1,10 +1,13 @@
 User-agent: *
-Allow: /
+Allow: /$
 
-# Disallow admin and private areas
+# Disallow all private routes
 Disallow: /dashboard
+Disallow: /dashboard/*
 Disallow: /api/
 Disallow: /admin/
+Disallow: /sign-in
+Disallow: /sign-up
 
 # Sitemap location
 Sitemap: https://pixeat.com.br/sitemap.xml
