@@ -20,8 +20,8 @@ export default function Home() {
       {/* <LogoCloud /> */}
       <ContentSection />
       <ContentSection2 />
-      <Features />
       <FeaturesSection />
+      <Features />
       <StatsSection />
       <Testimonials />
       <Pricing />

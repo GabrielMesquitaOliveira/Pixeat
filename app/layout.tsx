@@ -6,7 +6,8 @@ import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 // Header moved to landing-specific pages so dashboard isn't affected
 import { ptBR } from '@clerk/localizations'
-import {shadcn} from '@clerk/themes'
+import { shadcn } from '@clerk/themes'
+import GoogleAnalytics from '@/components/google-analytics'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -32,8 +33,15 @@ export default function RootLayout({
     <ClerkProvider localization={ptBR} appearance={{
       theme: shadcn,
     }}>
-      <html lang="en">
+      <html lang="pt-BR">
+        <head>
+          <meta charSet="UTF-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+        </head>
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+          {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
+            <GoogleAnalytics measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
+          )}
           {children}
         </body>
       </html>

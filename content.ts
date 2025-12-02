@@ -23,7 +23,8 @@ export const CONTENT = {
   // Logos de Clientes (opcional)
   clients: {
     title: "Restaurantes que confiam no Pixeat",
-    description: "De pequenos bistrôs a grandes redes de restaurantes, estabelecimentos de todos os tamanhos já descobriram como o Pixeat transforma a experiência do cliente e otimiza a operação. Junte-se a centenas de negócios que escolheram modernizar seu atendimento e aumentar suas vendas com tecnologia inteligente.",
+    description:
+      "De pequenos bistrôs a grandes redes de restaurantes, estabelecimentos de todos os tamanhos já descobriram como o Pixeat transforma a experiência do cliente e otimiza a operação. Junte-se a centenas de negócios que escolheram modernizar seu atendimento e aumentar suas vendas com tecnologia inteligente.",
     logos: [
       // Array de URLs ou nomes dos clientes
     ],
@@ -32,7 +33,8 @@ export const CONTENT = {
   // Problema/Dor
   problem: {
     title: "Os desafios que todo restaurante enfrenta",
-    description: "Gerenciar um restaurante não é fácil. Entre filas no caixa, erros nos pedidos, reservas desorganizadas e clientes impacientes, muitas oportunidades de venda são perdidas todos os dias. Sabemos o quanto é difícil manter a qualidade do atendimento enquanto lida com processos manuais, comunicação falha entre equipe e cozinha, e a pressão constante de oferecer uma experiência moderna que seus clientes esperam. É hora de mudar isso.",
+    description:
+      "Gerenciar um restaurante não é fácil. Entre filas no caixa, erros nos pedidos, reservas desorganizadas e clientes impacientes, muitas oportunidades de venda são perdidas todos os dias. Sabemos o quanto é difícil manter a qualidade do atendimento enquanto lida com processos manuais, comunicação falha entre equipe e cozinha, e a pressão constante de oferecer uma experiência moderna que seus clientes esperam. É hora de mudar isso.",
     problems: [
       {
         icon: "⏰",
@@ -49,8 +51,7 @@ export const CONTENT = {
       {
         icon: "📱",
         title: "Gestão de reservas caótica",
-        description:
-          "Ligações, anotações em papel e mesas mal organizadas",
+        description: "Ligações, anotações em papel e mesas mal organizadas",
       },
       {
         icon: "📉",
@@ -77,21 +78,30 @@ export const CONTENT = {
   // Funcionalidades Principais
   features: {
     title: "Tudo que você precisa em uma plataforma",
-    description: "Desenvolvemos cada funcionalidade pensando nos desafios reais que restaurantes enfrentam no dia a dia. Do momento em que o cliente chega até o fechamento da conta, o Pixeat otimiza cada etapa da jornada, eliminando gargalos, reduzindo erros e proporcionando uma experiência moderna que seus clientes esperam. Descubra como nossa tecnologia pode transformar a forma como você opera seu restaurante.",
+    description:
+      "Desenvolvemos cada funcionalidade pensando nos desafios reais que restaurantes enfrentam no dia a dia. Do momento em que o cliente chega até o fechamento da conta, o Pixeat otimiza cada etapa da jornada, eliminando gargalos, reduzindo erros e proporcionando uma experiência moderna que seus clientes esperam. Descubra como nossa tecnologia pode transformar a forma como você opera seu restaurante.",
     list: [
       {
         icon: "📱",
         title: "Cardápio Digital por QR Code",
         description:
           "Cliente escaneia, vê fotos dos pratos, escolhe e envia o pedido direto para a cozinha. Sem papel, sem erro.",
-        benefits: ["Atualização instantânea", "Fotos em alta qualidade", "Categorias organizadas"],
+        benefits: [
+          "Atualização instantânea",
+          "Fotos em alta qualidade",
+          "Categorias organizadas",
+        ],
       },
       {
         icon: "🪑",
         title: "Sistema de Reservas Online",
         description:
           "Seus clientes reservam mesa pelo site ou app. Você gerencia tudo em um painel intuitivo com controle de horários e disponibilidade.",
-        benefits: ["Confirmação automática", "Lembretes por WhatsApp", "Gestão de capacidade"],
+        benefits: [
+          "Confirmação automática",
+          "Lembretes por WhatsApp",
+          "Gestão de capacidade",
+        ],
       },
       {
         icon: "🔔",
@@ -105,15 +115,20 @@ export const CONTENT = {
         title: "Relatórios e Análises",
         description:
           "Descubra quais pratos vendem mais, horários de pico e performance da equipe. Dados para tomar melhores decisões.",
-        benefits: ["Vendas por período", "Pratos mais pedidos", "Tempo médio de atendimento"],
-      }
+        benefits: [
+          "Vendas por período",
+          "Pratos mais pedidos",
+          "Tempo médio de atendimento",
+        ],
+      },
     ],
   },
 
   // Como Funciona
   howItWorks: {
     title: "Como funciona na prática",
-    description: "Implementar tecnologia no seu restaurante não precisa ser complicado. Com o Pixeat, em apenas 3 passos simples você transforma completamente a experiência dos seus clientes e a eficiência da sua operação.",
+    description:
+      "Implementar tecnologia no seu restaurante não precisa ser complicado. Com o Pixeat, em apenas 3 passos simples você transforma completamente a experiência dos seus clientes e a eficiência da sua operação.",
     steps: [
       {
         step: "01",
@@ -142,7 +157,8 @@ export const CONTENT = {
   // Benefícios/Resultados
   benefits: {
     title: "Resultados que você vai alcançar",
-    description: "Não acredite apenas no que dizemos - os números falam por si. Restaurantes que implementam o Pixeat veem mudanças significativas já nos primeiros 30 dias de operação. Desde a redução drástica no tempo de atendimento até o aumento expressivo no ticket médio, nossa plataforma entrega resultados mensuráveis que impactam diretamente no seu faturamento. Confira as métricas reais de estabelecimentos que já usam o Pixeat e descubra o potencial de transformação para o seu negócio.",
+    description:
+      "Não acredite apenas no que dizemos - os números falam por si. Restaurantes que implementam o Pixeat veem mudanças significativas já nos primeiros 30 dias de operação. Desde a redução drástica no tempo de atendimento até o aumento expressivo no ticket médio, nossa plataforma entrega resultados mensuráveis que impactam diretamente no seu faturamento. Confira as métricas reais de estabelecimentos que já usam o Pixeat e descubra o potencial de transformação para o seu negócio.",
     stats: [
       {
         value: "60%",
@@ -157,7 +173,8 @@ export const CONTENT = {
       {
         value: "85%",
         label: "Menos erros nos pedidos",
-        description: "Cliente digita o próprio pedido, zero ruído na comunicação",
+        description:
+          "Cliente digita o próprio pedido, zero ruído na comunicação",
       },
       {
         value: "24h",
@@ -170,7 +187,8 @@ export const CONTENT = {
   // Depoimentos
   testimonials: {
     title: "O que nossos clientes dizem",
-    description: "Não há melhor prova do valor do Pixeat do que os resultados reais alcançados pelos nossos clientes. De pequenos restaurantes familiares a estabelecimentos de grande porte, donos e gerentes compartilham como a plataforma transformou não apenas a operação, mas também a satisfação dos clientes e o faturamento do negócio. Conheça histórias reais de quem implementou o Pixeat e nunca mais olhou para trás.",
+    description:
+      "Não há melhor prova do valor do Pixeat do que os resultados reais alcançados pelos nossos clientes. De pequenos restaurantes familiares a estabelecimentos de grande porte, donos e gerentes compartilham como a plataforma transformou não apenas a operação, mas também a satisfação dos clientes e o faturamento do negócio. Conheça histórias reais de quem implementou o Pixeat e nunca mais olhou para trás.",
     list: [
       {
         quote:
@@ -213,69 +231,92 @@ export const CONTENT = {
 
   // Planos e Preços
   pricing: {
-    title: "Planos que cabem no seu bolso",
-    description: "Acreditamos que tecnologia de qualidade deve ser acessível para restaurantes de todos os tamanhos. Por isso, criamos planos flexíveis que se adaptam à realidade do seu negócio, seja você um pequeno bistrô ou uma grande operação. Sem taxas escondidas, sem surpresas na fatura, sem contratos de fidelidade. Escolha o plano ideal para começar hoje mesmo e pague apenas pelo que usar. E o melhor: teste grátis por 30 dias sem precisar cadastrar cartão de crédito.",
-    badge: "🎉 30 dias grátis em qualquer plano",
+    title: "Planos transparentes para cada negócio",
+
+    description:
+      "Sabemos que cada restaurante tem suas particularidades e desafios únicos. Por isso, desenvolvemos planos pensados especialmente para acompanhar o crescimento do seu estabelecimento - desde quem está começando a explorar o autoatendimento digital até grandes operações com múltiplas unidades. Não acreditamos em letras miúdas, taxas escondidas ou contratos que prendem você por anos. Nossa proposta é simples: tecnologia de ponta, preço justo e total liberdade para você decidir o que faz sentido para o seu negócio.",
+
+    badge: "🎉 30 dias grátis • Comece agora sem cartão de crédito",
+
     plans: [
       {
         name: "Starter",
-        description: "Para restaurantes começando",
+        description:
+          "Ideal para quem está começando ou quer validar o autoatendimento no seu restaurante. Perfeito para bistrôs, lanchonetes e estabelecimentos de pequeno porte que querem modernizar o atendimento sem investimento inicial.",
         price: "R$ 0",
-        period: "/mês",
+        period: "/mês • por tempo limitado",
         features: [
           "Até 200 pedidos/mês",
-          "Até 5 mesas",
+          "Até 5 mesas com QR Code",
           "Cardápio digital ilimitado",
-          "Sistema de reservas",
+          "Sistema de reservas online",
           "Suporte por email",
-          "Relatórios básicos",
+          "Relatórios básicos de vendas",
+          "Personalização com sua marca",
         ],
-        cta: "Começar Grátis",
+        cta: "Começar Grátis Agora",
         highlighted: false,
+        badge: "OFERTA LIMITADA • 10 vagas",
+        highlight: "Grátis para sempre para os primeiros clientes",
       },
       {
         name: "Professional",
-        description: "Mais popular entre restaurantes",
+        description:
+          "Nossa opção mais escolhida. Reúne todos os recursos que restaurantes consolidados precisam para escalar as operações, melhorar a experiência do cliente e aumentar o faturamento mês após mês.",
         price: "R$ 49",
         period: "/mês",
+        originalPrice: "R$ 99",
+        discount: "50% OFF nos 3 primeiros meses",
         features: [
           "Até 500 pedidos/mês",
-          "Até 20 mesas",
-          "Tudo do Starter +",
-          "Notificações WhatsApp",
-          "Suporte prioritário",
-          "Relatórios avançados",
-          "Personalização completa",
+          "Até 20 mesas com QR Code",
+          "Tudo do plano Starter +",
+          "Notificações automáticas por WhatsApp",
+          "Suporte prioritário por chat",
+          "Relatórios avançados e analytics",
+          "Personalização completa do cardápio",
+          "Campanhas e promoções",
+          "Integração com sistemas de pagamento",
         ],
-        cta: "Começar Grátis",
+        cta: "Começar Teste Grátis",
         highlighted: true,
-        badge: "MAIS POPULAR",
+        badge: "MAIS POPULAR • 80% dos clientes escolhem este",
+        highlight: "Melhor custo-benefício para crescer seu negócio",
       },
       {
         name: "Enterprise",
-        description: "Para redes e grandes operações",
+        description:
+          "Solução completa para redes de restaurantes, franquias e grandes operações que precisam de volume ilimitado, recursos avançados e suporte dedicado para garantir excelência operacional.",
         price: "R$ 99",
-        period: "",
+        period: "/mês por unidade",
         features: [
           "Pedidos ilimitados",
           "Mesas ilimitadas",
-          "Tudo do Professional +",
-          "Múltiplas unidades",
+          "Tudo do plano Professional +",
+          "Gestão de múltiplas unidades",
           "Gerente de conta dedicado",
-          "Integrações customizadas",
-          "SLA de suporte",
+          "Integrações customizadas via API",
+          "Relatórios consolidados por rede",
+          "SLA de suporte garantido",
+          "Treinamento presencial da equipe",
+          "Dashboard executivo em tempo real",
         ],
         cta: "Falar com Especialista",
         highlighted: false,
+        badge: "ENTERPRISE",
+        highlight: "Para operações de alto volume e múltiplas unidades",
       },
     ],
-    guarantee: "✓ Cancele quando quiser • Sem multa • Sem fidelidade",
+
+    guarantee:
+      "✓ Cancele quando quiser, sem multas • ✓ Sem contrato de fidelidade • ✓ Upgrade ou downgrade a qualquer momento",
   },
 
   // FAQ
   faq: {
     title: "Perguntas frequentes",
-    description: "Sabemos que implementar uma nova tecnologia no seu restaurante gera dúvidas. Reunimos aqui as perguntas mais comuns que recebemos de donos e gerentes como você. Se mesmo assim alguma questão permanecer sem resposta, nossa equipe de suporte está sempre disponível para ajudar você a entender como o Pixeat pode se encaixar perfeitamente na realidade do seu negócio e resolver seus desafios específicos.",
+    description:
+      "Sabemos que implementar uma nova tecnologia no seu restaurante gera dúvidas. Reunimos aqui as perguntas mais comuns que recebemos de donos e gerentes como você. Se mesmo assim alguma questão permanecer sem resposta, nossa equipe de suporte está sempre disponível para ajudar você a entender como o Pixeat pode se encaixar perfeitamente na realidade do seu negócio e resolver seus desafios específicos.",
     questions: [
       {
         id: "item-1",
@@ -326,7 +367,7 @@ export const CONTENT = {
           "Em 24 horas seu restaurante está funcionando! Nós configuramos tudo, geramos os QR Codes, fazemos um treinamento rápido com sua equipe e você já pode começar a usar.",
       },
     ],
-    contact: "Não achou o que está procurando?, entre em contato pelo whatsapp"
+    contact: "Não achou o que está procurando?, entre em contato pelo whatsapp",
   },
 
   // CTA Final
@@ -338,7 +379,11 @@ export const CONTENT = {
       primary: "Começar Grátis",
       secondary: "Agendar uma Demonstração",
     },
-    features: ["✓ Sem cartão de crédito", "✓ Implementação em 24h", "✓ Suporte em português"],
+    features: [
+      "✓ Sem cartão de crédito",
+      "✓ Implementação em 24h",
+      "✓ Suporte em português",
+    ],
   },
 
   // Footer
@@ -392,7 +437,9 @@ export const CONTENT = {
       phone: "+55 11 99999-9999",
       whatsapp: "+55 11 99999-9999",
     },
-    copyright: `© ${new Date().getFullYear()} Pixeat. Todos os direitos reservados.`,
+    copyright: `© ${
+      new Date().getFullYear()
+    } Pixeat. Todos os direitos reservados.`,
   },
 };
 

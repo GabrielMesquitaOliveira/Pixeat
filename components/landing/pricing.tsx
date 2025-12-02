@@ -10,7 +10,7 @@ export default function Pricing() {
     return (
         <section id="precos" className="py-16 md:py-24">
             <div className="mx-auto max-w-6xl px-6">
-                <div className="mx-auto max-w-2xl space-y-6 text-center">
+                <div className="mx-auto space-y-6 text-center">
                     <h2 className="text-center text-4xl font-semibold lg:text-5xl">{pricing.title}</h2>
                     <p className="text-lg text-muted-foreground">{pricing.description}</p>
                     {pricing.badge ? (
