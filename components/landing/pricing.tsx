@@ -1,8 +1,10 @@
+'use client'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Check } from 'lucide-react'
 import { CONTENT } from '@/content'
+import { SignUpButton } from '@clerk/nextjs'
 
 export default function Pricing() {
     const { pricing } = CONTENT
@@ -49,9 +51,17 @@ export default function Pricing() {
                                 </CardContent>
 
                                 <CardFooter className="mt-auto">
-                                    <Button asChild className="w-full" variant={isHighlighted ? undefined : 'outline'}>
-                                        <Link href="#">{plan.cta}</Link>
-                                    </Button>
+                                    {plan.name === 'Enterprise' ? (
+                                        <Button asChild className="w-full" variant={isHighlighted ? undefined : 'outline'}>
+                                            <Link href="#">{plan.cta}</Link>
+                                        </Button>
+                                    ) : (
+                                        <SignUpButton mode="modal">
+                                            <Button className="w-full" variant={isHighlighted ? undefined : 'outline'}>
+                                                {plan.cta}
+                                            </Button>
+                                        </SignUpButton>
+                                    )}
                                 </CardFooter>
                             </Card>
                         )

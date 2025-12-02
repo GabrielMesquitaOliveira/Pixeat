@@ -1,10 +1,12 @@
+'use client'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import { TextEffect } from '@/components/ui/text-effect'
 import { AnimatedGroup } from '@/components/ui/animated-group'
-import { CONTENT } from '../../content';
+import { CONTENT } from '../../content'
+import { SignUpButton } from '@clerk/nextjs'
 
 const transitionVariants = {
     item: {
@@ -133,14 +135,13 @@ export default function HeroSection() {
                                     <div
                                         key={1}
                                         className="bg-foreground/10 rounded-[calc(var(--radius-xl)+0.125rem)] border p-0.5">
-                                        <Button
-                                            asChild
-                                            size="lg"
-                                            className="rounded-xl px-5 text-base">
-                                            <Link href="#link">
+                                        <SignUpButton mode="modal">
+                                            <Button
+                                                size="lg"
+                                                className="rounded-xl px-5 text-base">
                                                 <span className="text-nowrap">{CONTENT.hero.cta.primary}</span>
-                                            </Link>
-                                        </Button>
+                                            </Button>
+                                        </SignUpButton>
                                     </div>
                                     <Button
                                         key={2}

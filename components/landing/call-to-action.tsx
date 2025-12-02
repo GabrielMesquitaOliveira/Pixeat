@@ -1,6 +1,8 @@
+'use client'
 import { Button } from '@/components/ui/button'
 import { CONTENT } from '@/content'
 import Link from 'next/link'
+import { SignUpButton } from '@clerk/nextjs'
 
 export default function CallToAction() {
     return (
@@ -11,13 +13,11 @@ export default function CallToAction() {
                     <p className="mt-6 text-lg text-muted-foreground">{CONTENT.ctaFinal.description}</p>
 
                     <div className="mt-12 flex flex-wrap justify-center gap-4">
-                        <Button
-                            asChild
-                            size="lg">
-                            <Link href="/">
+                        <SignUpButton mode="modal">
+                            <Button size="lg">
                                 <span>{CONTENT.ctaFinal.cta.primary}</span>
-                            </Link>
-                        </Button>
+                            </Button>
+                        </SignUpButton>
 
                         <Button
                             asChild
