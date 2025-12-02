@@ -9,9 +9,9 @@ export default function ContentSection() {
                 <div className="grid gap-6 sm:grid-cols-2 md:gap-12 lg:gap-24">
                     <div className="relative space-y-4">
                         <h2 className="relative z-10 max-w-xl text-4xl font-semibold lg:text-5xl">{CONTENT.solution.title}</h2>
-                        <p className="text-muted-foreground">
+                        {/* <p className="text-muted-foreground">
                             {CONTENT.solution.subtitle}
-                        </p>
+                        </p> */}
                         <p className="text-muted-foreground">
                             {CONTENT.solution.description}
                         </p>
