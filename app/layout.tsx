@@ -7,8 +7,6 @@ import './globals.css'
 // Header moved to landing-specific pages so dashboard isn't affected
 import { ptBR } from '@clerk/localizations'
 import { shadcn } from '@clerk/themes'
-import GoogleAnalytics from '@/components/google-analytics'
-import SchemaMarkup from '@/components/schema-markup'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -52,9 +50,6 @@ export default function RootLayout({
           <meta name="theme-color" content="#000000" />
         </head>
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-          {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
-            <GoogleAnalytics measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
-          )}
           {children}
         </body>
       </html>

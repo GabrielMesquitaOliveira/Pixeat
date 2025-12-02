@@ -13,6 +13,7 @@ import Testimonials from "@/components/landing/testimonials";
 import { HeroHeader } from '@/components/landing/header'
 import { Metadata } from 'next'
 import SchemaMarkup from '@/components/schema-markup'
+import GoogleAnalytics from '@/components/google-analytics'
 
 export const metadata: Metadata = {
   title: 'Pixeat - Autoatendimento Inteligente para Restaurantes | QR Code e Reservas Online',
@@ -77,6 +78,9 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
+      {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
+        <GoogleAnalytics measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
+      )}
       <SchemaMarkup />
       <HeroHeader />
       <HeroSection />
