@@ -14,6 +14,7 @@ import { HeroHeader } from '@/components/landing/header'
 import { Metadata } from 'next'
 import SchemaMarkup from '@/components/schema-markup'
 import GoogleAnalytics from '@/components/google-analytics'
+import WhatsAppButton from '@/components/whatsapp-button'
 
 export const metadata: Metadata = {
   title: 'Pixeat - Autoatendimento Inteligente para Restaurantes | QR Code e Reservas Online',
@@ -95,6 +96,7 @@ export default function Home() {
       <FAQsFour />
       <CallToAction />
       <FooterSection />
+      <WhatsAppButton />
     </>
   );
 }
