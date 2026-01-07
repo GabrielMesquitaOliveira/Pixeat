@@ -1,11 +1,11 @@
 "use client"
 import { useState } from 'react'
-import { Menu } from './Menu'
-import { Pedidos } from './Pedidos'
-import { QRCodes } from './QRCodes'
-import { Mesas } from './Mesas'
+import { Menu } from './Menu/Menu'
+import { QRCodes } from './Qrcodes/QRCodes'
+import { Orders } from './Orders/Orders'
 import { Dashboard } from './Dashboard'
 import { Sidebar } from './components/Sidebar'
+import { Tables } from './Tables/Tables'
 
 export default function ClientDashboard() {
   const [currentPage, setCurrentPage] = useState("dashboard");
@@ -16,12 +16,12 @@ export default function ClientDashboard() {
         return <Dashboard />;
       case "menu":
         return <Menu />;
-      case "pedidos":
-        return <Pedidos />;
+      case "orders":
+        return <Orders />;
       case "qrcodes":
         return <QRCodes />;
       case "mesas":
-        return <Mesas />;
+        return <Tables />;
       case "configuracoes":
         return (
           <div className="p-8">

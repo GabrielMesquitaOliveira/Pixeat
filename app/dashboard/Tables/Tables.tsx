@@ -24,7 +24,7 @@ const statusConfig = {
   reservada: { label: "Reservada", bg: "bg-orange-500", count: 2 },
 };
 
-export function Mesas() {
+export function Tables() {
   return (
     <div className="p-8 space-y-6">
       {/* Header */}

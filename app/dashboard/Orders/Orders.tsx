@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search, Filter, Eye } from "lucide-react";
 
-const pedidos = [
+const orders = [
   {
     id: "#1247",
     cliente: "Roberto Lima",
@@ -93,14 +93,14 @@ const statusConfig = {
   entregue: { bg: "bg-blue-500", count: 1 },
 };
 
-export function Pedidos() {
+export function Orders() {
   return (
     <div className="p-8 space-y-6">
       {/* Header */}
       <div>
-        <h1 className="text-3xl mb-2">Gerenciar Pedidos</h1>
+        <h1 className="text-3xl mb-2">Gerenciar orders</h1>
         <p className="text-muted-foreground">
-          Acompanhe todos os pedidos em tempo real. Gerencie o status de cada pedido, desde o recebimento 
+          Acompanhe todos os orders em tempo real. Gerencie o status de cada order, desde o recebimento 
           até a entrega, e mantenha sua cozinha organizada e eficiente.
         </p>
       </div>
@@ -109,7 +109,7 @@ export function Pedidos() {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
         <Card className="p-6">
           <div className="space-y-2">
-            <p className="text-sm text-muted-foreground">Pedidos Hoje</p>
+            <p className="text-sm text-muted-foreground">orders Hoje</p>
             <h3 className="text-3xl">124</h3>
             <div className="flex items-center gap-1 text-sm text-emerald-600">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -162,7 +162,7 @@ export function Pedidos() {
         <div className="flex-1 relative">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-muted-foreground" />
           <Input
-            placeholder="Buscar por número do pedido, mesa ou cliente..."
+            placeholder="Buscar por número do order, mesa ou cliente..."
             className="pl-10 bg-input-background border-0"
           />
         </div>
@@ -191,14 +191,14 @@ export function Pedidos() {
         </button>
       </div>
 
-      {/* Orders Table */}
+      {/* order Table */}
       <Card className="overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
               <tr className="border-b border-border text-left text-sm text-muted-foreground bg-muted/30">
                 <th className="p-4 font-medium">Cliente</th>
-                <th className="p-4 font-medium">Número do Pedido</th>
+                <th className="p-4 font-medium">Número do order</th>
                 <th className="p-4 font-medium">Horário</th>
                 <th className="p-4 font-medium">Itens</th>
                 <th className="p-4 font-medium">Total</th>
@@ -207,28 +207,28 @@ export function Pedidos() {
               </tr>
             </thead>
             <tbody>
-              {pedidos.map((pedido) => (
-                <tr key={pedido.id} className="border-b border-border last:border-0 hover:bg-muted/20">
+              {orders.map((order) => (
+                <tr key={order.id} className="border-b border-border last:border-0 hover:bg-muted/20">
                   <td className="p-4">
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                        {pedido.mesa ? pedido.mesa : "👤"}
+                        {order.mesa ? order.mesa : "👤"}
                       </div>
-                      <span>{pedido.cliente}</span>
+                      <span>{order.cliente}</span>
                     </div>
                   </td>
-                  <td className="p-4">{pedido.id}</td>
-                  <td className="p-4">{pedido.horario}</td>
-                  <td className="p-4">{pedido.itens} itens</td>
-                  <td className="p-4">R$ {pedido.total.toFixed(2)}</td>
+                  <td className="p-4">{order.id}</td>
+                  <td className="p-4">{order.horario}</td>
+                  <td className="p-4">{order.itens} itens</td>
+                  <td className="p-4">R$ {order.total.toFixed(2)}</td>
                   <td className="p-4">
                     <span
                       className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm text-white ${
-                        statusConfig[pedido.status as keyof typeof statusConfig].bg
+                        statusConfig[order.status as keyof typeof statusConfig].bg
                       }`}
                     >
                       <span className="w-1.5 h-1.5 bg-white rounded-full"></span>
-                      {pedido.statusLabel}
+                      {order.statusLabel}
                     </span>
                   </td>
                   <td className="p-4">
