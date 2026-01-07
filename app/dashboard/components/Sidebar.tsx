@@ -1,8 +1,8 @@
 import { Home, ShoppingBag, ClipboardList, QrCode, Settings, Users, HelpCircle } from "lucide-react";
 
 interface SidebarProps {
-  currentPage: string;
-  onPageChange: (page: string) => void;
+  readonly currentPage: string;
+  readonly onPageChange: (page: string) => void;
 }
 
 export function Sidebar({ currentPage, onPageChange }: SidebarProps) {
