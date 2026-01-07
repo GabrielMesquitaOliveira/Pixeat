@@ -8,10 +8,10 @@ interface SidebarProps {
 export function Sidebar({ currentPage, onPageChange }: SidebarProps) {
   const menuItems = [
     { id: "dashboard", label: "Dashboard", icon: Home },
-    { id: "pedidos", label: "Pedidos", icon: ClipboardList },
-    { id: "cardapio", label: "Cardápio", icon: ShoppingBag },
+    { id: "orders", label: "Pedidos", icon: ClipboardList },
+    { id: "menu", label: "Cardápio", icon: ShoppingBag },
     { id: "qrcodes", label: "QR Codes", icon: QrCode },
-    { id: "mesas", label: "Mesas", icon: Users },
+    { id: "tables", label: "Mesas", icon: Users },
   ];
 
   const bottomItems = [
