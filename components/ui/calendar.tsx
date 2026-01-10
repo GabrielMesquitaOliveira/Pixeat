@@ -7,6 +7,14 @@ import { DayPicker } from "react-day-picker";
 import { cn } from "./utils";
 import { buttonVariants } from "./button";
 
+const IconLeft = (props: React.ComponentProps<typeof ChevronLeft>) => (
+  <ChevronLeft className={cn("size-4", props.className)} {...props} />
+);
+
+const IconRight = (props: React.ComponentProps<typeof ChevronRight>) => (
+  <ChevronRight className={cn("size-4", props.className)} {...props} />
+);
+
 function Calendar({
   className,
   classNames,
@@ -59,14 +67,7 @@ function Calendar({
         day_hidden: "invisible",
         ...classNames,
       }}
-      components={{
-        IconLeft: ({ className, ...props }) => (
-          <ChevronLeft className={cn("size-4", className)} {...props} />
-        ),
-        IconRight: ({ className, ...props }) => (
-          <ChevronRight className={cn("size-4", className)} {...props} />
-        ),
-      }}
+      components={{ IconLeft, IconRight } as React.ComponentProps<typeof DayPicker>["components"]}
       {...props}
     />
   );
