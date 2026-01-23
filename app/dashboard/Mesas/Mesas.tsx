@@ -28,7 +28,7 @@ const statusConfig = {
 
 export function Mesas() {
   return (
-    <div className="p-8 space-y-6">
+    <div className="p-8 space-y-6 bg-slate-50">
       {/* Header */}
       <div>
         <h1 className="text-3xl mb-2">Gerenciar Mesas</h1>

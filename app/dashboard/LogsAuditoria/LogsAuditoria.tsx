@@ -376,7 +376,7 @@ export function LogsAuditoria() {
   };
 
   return (
-    <div className="p-8 space-y-6">
+    <div className="p-8 space-y-6 bg-slate-50">
       {/* Header */}
       <div>
         <div className="flex items-center gap-3 mb-2">

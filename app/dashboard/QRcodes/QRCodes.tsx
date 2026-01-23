@@ -22,7 +22,7 @@ interface QRCodesProps {
 
 export function QRCodes({ onNavigate }: QRCodesProps) {
   return (
-    <div className="p-8 space-y-6">
+    <div className="p-8 space-y-6 bg-slate-50">
       {/* Header */}
       <div className="flex items-start justify-between">
         <div>

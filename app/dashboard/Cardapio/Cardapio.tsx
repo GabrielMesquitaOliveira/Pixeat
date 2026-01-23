@@ -137,7 +137,7 @@ export function Cardapio() {
   });
 
   return (
-    <div className="p-8 space-y-6 bg-gradient-to-b from-secondary/30 to-background">
+    <div className="p-8 space-y-6 bg-slate-50">
       {/* Header */}
       <div>
         <h1 className="text-3xl mb-2">Cardápio Digital</h1>

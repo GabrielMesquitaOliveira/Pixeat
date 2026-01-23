@@ -146,7 +146,7 @@ export function UsoCota() {
   };
 
   return (
-    <div className="p-8 space-y-6 bg-gradient-to-b from-secondary/30 to-background min-h-screen">
+    <div className="p-8 space-y-6 bg-slate-50">
       {/* Header */}
       <div className="flex items-start justify-between">
         <div>

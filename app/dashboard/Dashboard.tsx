@@ -106,7 +106,7 @@ interface DashboardProps {
 
 export function Dashboard({ onNavigate }: DashboardProps) {
   return (
-    <div className="p-8 space-y-6 bg-gradient-to-b from-secondary/30 to-background">
+    <div className="p-8 space-y-6 bg-slate-50">
       {/* Header */}
       <div className="flex items-start justify-between">
         <div className="space-y-3">
