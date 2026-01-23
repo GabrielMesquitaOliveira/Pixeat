@@ -4,7 +4,7 @@ import { Menu } from './Menu/Menu'
 import { QRCodes } from './Qrcodes/QRCodes'
 import { Orders } from './Orders/Orders'
 import { Dashboard } from './Dashboard'
-import { Sidebar } from './components/Sidebar'
+import { Sidebar } from '../../components/Sidebar'
 import { Tables } from './Tables/Tables'
 
 export default function ClientDashboard() {
