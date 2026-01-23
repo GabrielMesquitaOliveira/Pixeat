@@ -1,17 +1,21 @@
-import { Home, ShoppingBag, ClipboardList, QrCode, Settings, Users, HelpCircle } from "lucide-react";
+import { Home, ShoppingBag, ClipboardList, QrCode, Settings, Users, HelpCircle, CreditCard, UserCog, Shield } from "lucide-react";
+import logoImage from "figma:asset/dc452183b61bdbe8e297c261bf887352aeaaad37.png";
 
 interface SidebarProps {
-  readonly currentPage: string;
-  readonly onPageChange: (page: string) => void;
+  currentPage: string;
+  onPageChange: (page: string) => void;
 }
 
 export function Sidebar({ currentPage, onPageChange }: SidebarProps) {
   const menuItems = [
     { id: "dashboard", label: "Dashboard", icon: Home },
-    { id: "orders", label: "Pedidos", icon: ClipboardList },
-    { id: "menu", label: "Cardápio", icon: ShoppingBag },
+    { id: "pedidos", label: "Pedidos", icon: ClipboardList },
+    { id: "cardapio", label: "Cardápio", icon: ShoppingBag },
     { id: "qrcodes", label: "QR Codes", icon: QrCode },
-    { id: "tables", label: "Mesas", icon: Users },
+    { id: "mesas", label: "Mesas", icon: Users },
+    { id: "membros", label: "Membros", icon: UserCog },
+    { id: "uso-cota", label: "Uso & Faturamento", icon: CreditCard },
+    { id: "logs-auditoria", label: "Logs de Auditoria", icon: Shield },
   ];
 
   const bottomItems = [
@@ -35,11 +39,10 @@ export function Sidebar({ currentPage, onPageChange }: SidebarProps) {
             <button
               key={item.id}
               onClick={() => onPageChange(item.id)}
-              className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${
-                isActive
+              className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${isActive
                   ? "bg-primary text-primary-foreground shadow-sm"
                   : "text-sidebar-foreground hover:bg-sidebar-accent"
-              }`}
+                }`}
             >
               <Icon className="w-5 h-5" />
               <span>{item.label}</span>
@@ -57,11 +60,10 @@ export function Sidebar({ currentPage, onPageChange }: SidebarProps) {
             <button
               key={item.id}
               onClick={() => onPageChange(item.id)}
-              className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
-                isActive
+              className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${isActive
                   ? "bg-sidebar-accent text-sidebar-primary"
                   : "text-sidebar-foreground hover:bg-sidebar-accent/50"
-              }`}
+                }`}
             >
               <Icon className="w-5 h-5" />
               <span>{item.label}</span>

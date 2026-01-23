@@ -1,8 +1,10 @@
+"use client";
+
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search, Plus, Filter, Edit2, Trash2 } from "lucide-react";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { ImageWithFallback } from "../../../components/ui/ImageWithFallback";
 
 const produtos = [
   {
@@ -75,7 +77,7 @@ export function Menu() {
       <div>
         <h1 className="text-3xl mb-2">Cardápio Digital</h1>
         <p className="text-muted-foreground">
-          Gerencie todos os produtos do seu restaurante em um único lugar. Cadastre novos pratos e bebidas, 
+          Gerencie todos os produtos do seu restaurante em um único lugar. Cadastre novos pratos e bebidas,
           edite informações como nome, descrição, preço e disponibilidade, e acompanhe o desempenho de vendas de cada item.
         </p>
       </div>
@@ -104,19 +106,17 @@ export function Menu() {
         {categorias.map((cat) => (
           <button
             key={cat.id}
-            className={`px-4 py-2 rounded-full text-sm ${
-              cat.id === "todos"
-                ? "bg-primary text-primary-foreground"
-                : "hover:bg-muted"
-            }`}
+            className={`px-4 py-2 rounded-full text-sm ${cat.id === "todos"
+              ? "bg-primary text-primary-foreground"
+              : "hover:bg-muted"
+              }`}
           >
             {cat.label}{" "}
             <span
-              className={`ml-1 px-2 rounded-full ${
-                cat.id === "todos"
-                  ? "bg-white/20"
-                  : "bg-primary/10 text-primary"
-              }`}
+              className={`ml-1 px-2 rounded-full ${cat.id === "todos"
+                ? "bg-white/20"
+                : "bg-primary/10 text-primary"
+                }`}
             >
               {cat.count}
             </span>

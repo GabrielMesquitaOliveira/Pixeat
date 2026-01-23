@@ -1,27 +1,41 @@
-"use client"
-import { useState } from 'react'
-import { Menu } from './Menu/Menu'
-import { QRCodes } from './Qrcodes/QRCodes'
-import { Orders } from './Orders/Orders'
-import { Dashboard } from './Dashboard'
-import { Sidebar } from '../../components/Sidebar'
-import { Tables } from './Tables/Tables'
+"use client";
 
-export default function ClientDashboard() {
+import { Sidebar } from "@/components/Sidebar";
+import { useState } from "react";
+import { Dashboard } from "./Dashboard";
+import { Cardapio } from "./Cardapio/Cardapio";
+import { CardapioDigital } from "./CardapioDigital/CardapioDigital";
+import { LogsAuditoria } from "./LogsAuditoria/LogsAuditoria";
+import { Membros } from "./Membros/Membros";
+import { Mesas } from "./Mesas/Mesas";
+import { Pedidos } from "./Pedidos/Pedidos";
+import { QRCodes } from "./QRcodes/QRCodes";
+import { UsoCota } from "./UsoCota/UsoCota";
+
+export default function App() {
   const [currentPage, setCurrentPage] = useState("dashboard");
+  const [viewMode, setViewMode] = useState<"admin" | "customer">("admin");
 
   const renderPage = () => {
     switch (currentPage) {
       case "dashboard":
-        return <Dashboard />;
-      case "menu":
-        return <Menu />;
-      case "orders":
-        return <Orders />;
+        return <Dashboard onNavigate={setCurrentPage} />;
+      case "cardapio":
+        return <Cardapio />;
+      case "pedidos":
+        return <Pedidos />;
       case "qrcodes":
-        return <QRCodes />;
+        return <QRCodes onNavigate={setCurrentPage} />;
       case "mesas":
-        return <Tables />;
+        return <Mesas />;
+      case "cardapio-digital":
+        return <CardapioDigital onNavigate={setCurrentPage} />;
+      case "membros":
+        return <Membros />;
+      case "uso-cota":
+        return <UsoCota />;
+      case "logs-auditoria":
+        return <LogsAuditoria />;
       case "configuracoes":
         return (
           <div className="p-8">
@@ -41,13 +55,15 @@ export default function ClientDashboard() {
           </div>
         );
       default:
-        return <Dashboard />;
+        return <Dashboard onNavigate={setCurrentPage} />;
     }
   };
 
   return (
     <div className="flex h-screen bg-background">
-      <Sidebar currentPage={currentPage} onPageChange={setCurrentPage} />
+      {currentPage !== "cardapio-digital" && (
+        <Sidebar currentPage={currentPage} onPageChange={setCurrentPage} />
+      )}
       <main className="flex-1 overflow-y-auto">
         {renderPage()}
       </main>

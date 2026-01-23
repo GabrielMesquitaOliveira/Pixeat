@@ -1,5 +1,7 @@
-import { Card } from '@/components/ui/card';
+"use client";
+
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Plus, Search } from "lucide-react";
 
@@ -24,14 +26,14 @@ const statusConfig = {
   reservada: { label: "Reservada", bg: "bg-orange-500", count: 2 },
 };
 
-export function Tables() {
+export function Mesas() {
   return (
     <div className="p-8 space-y-6">
       {/* Header */}
       <div>
         <h1 className="text-3xl mb-2">Gerenciar Mesas</h1>
         <p className="text-muted-foreground">
-          Organize e acompanhe o status de todas as mesas do seu restaurante. Visualize quais estão 
+          Organize e acompanhe o status de todas as mesas do seu restaurante. Visualize quais estão
           disponíveis, ocupadas ou reservadas em tempo real.
         </p>
       </div>
@@ -124,9 +126,8 @@ export function Tables() {
           return (
             <Card
               key={mesa.id}
-              className={`p-6 cursor-pointer transition-all hover:shadow-lg ${
-                mesa.status === "ocupada" ? "ring-2 ring-red-500/20" : ""
-              }`}
+              className={`p-6 cursor-pointer transition-all hover:shadow-lg ${mesa.status === "ocupada" ? "ring-2 ring-red-500/20" : ""
+                }`}
             >
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
@@ -151,8 +152,8 @@ export function Tables() {
                     {mesa.status === "disponivel"
                       ? "Marcar Ocupada"
                       : mesa.status === "ocupada"
-                      ? "Liberar Mesa"
-                      : "Ver Reserva"}
+                        ? "Liberar Mesa"
+                        : "Ver Reserva"}
                   </Button>
                 </div>
               </div>

@@ -1,7 +1,9 @@
-import { Card } from "@/components/ui/card";
+"use client";
+
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Plus, Download, QrCode as QrCodeIcon, Edit2, Trash2 } from "lucide-react";
+import { Plus, Download, QrCode as QrCodeIcon, Edit2, Trash2, Eye } from "lucide-react";
 
 const qrCodes = [
   { id: 1, mesa: "Mesa 01", codigo: "QR-001", status: "ativo", scans: 45, ultimoScan: "Há 2 horas" },
@@ -14,16 +16,32 @@ const qrCodes = [
   { id: 8, mesa: "Mesa 08", codigo: "QR-008", status: "ativo", scans: 37, ultimoScan: "Há 2 dias" },
 ];
 
-export function QRCodes() {
+interface QRCodesProps {
+  onNavigate?: (page: string) => void;
+}
+
+export function QRCodes({ onNavigate }: QRCodesProps) {
   return (
     <div className="p-8 space-y-6">
       {/* Header */}
-      <div>
-        <h1 className="text-3xl mb-2">Gerenciar QR Codes</h1>
-        <p className="text-muted-foreground">
-          Crie e gerencie QR codes para cada mesa do seu restaurante. Os clientes podem escanear o código 
-          para acessar o cardápio digital e fazer pedidos diretamente do celular, sem precisar de garçom.
-        </p>
+      <div className="flex items-start justify-between">
+        <div>
+          <h1 className="text-3xl mb-2">Gerenciar QR Codes</h1>
+          <p className="text-muted-foreground">
+            Crie e gerencie QR codes para cada mesa do seu restaurante. Os clientes podem escanear o código
+            para acessar o cardápio digital e fazer pedidos diretamente do celular, sem precisar de garçom.
+          </p>
+        </div>
+        {onNavigate && (
+          <Button
+            variant="outline"
+            className="gap-2"
+            onClick={() => onNavigate("cardapio-digital")}
+          >
+            <Eye className="w-4 h-4" />
+            Preview Cardápio
+          </Button>
+        )}
       </div>
 
       {/* Stats */}
@@ -109,9 +127,8 @@ export function QRCodes() {
                 {Array.from({ length: 64 }).map((_, i) => (
                   <div
                     key={i}
-                    className={`w-2 h-2 rounded-sm ${
-                      Math.random() > 0.5 ? "bg-primary" : "bg-transparent"
-                    }`}
+                    className={`w-2 h-2 rounded-sm ${Math.random() > 0.5 ? "bg-primary" : "bg-transparent"
+                      }`}
                   />
                 ))}
               </div>
@@ -122,11 +139,10 @@ export function QRCodes() {
               <div className="flex items-center justify-between">
                 <h3 className="text-lg">{qr.mesa}</h3>
                 <span
-                  className={`px-2 py-1 rounded-full text-xs ${
-                    qr.status === "ativo"
-                      ? "bg-emerald-100 text-emerald-700"
-                      : "bg-orange-100 text-orange-700"
-                  }`}
+                  className={`px-2 py-1 rounded-full text-xs ${qr.status === "ativo"
+                    ? "bg-emerald-100 text-emerald-700"
+                    : "bg-orange-100 text-orange-700"
+                    }`}
                 >
                   {qr.status}
                 </span>
@@ -155,6 +171,9 @@ export function QRCodes() {
               </Button>
               <Button size="sm" variant="outline" className="text-destructive hover:text-destructive">
                 <Trash2 className="w-4 h-4" />
+              </Button>
+              <Button size="sm" variant="outline">
+                <Eye className="w-4 h-4" />
               </Button>
             </div>
           </Card>
