@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Pixeat
 
-## Getting Started
+Pixeat is a modern self-service platform for restaurants, enabling digital menus, online reservations, real-time order management, and operational analytics—all in one place.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Digital Menu via QR Code:** Customers scan a QR code at the table to browse the menu, view photos, and place orders directly from their smartphones.
+- **Online Reservations:** Manage table bookings with real-time availability and an intuitive dashboard.
+- **Order Management:** Track and update orders as they arrive, reducing errors and improving efficiency.
+- **Dashboard & Analytics:** Visualize sales, peak hours, and team performance with comprehensive reports.
+- **Audit Logs:** Maintain a detailed history of all actions for transparency and control.
+- **Members Management:** Easily manage staff access and roles.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📸 Screenshots
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+All screenshots are located in `/public/software/` and represent the main dashboard areas:
+- `dashboard.png` – Main dashboard
+- `cardapio.png` – Digital menu management
+- `mesas.png` – Tables and reservations
+- `pedidos.png` – Orders management
+- `qrcodes.png` – QR Codes system
+- `auditoria.png` – Audit logs
+- `membros.png` – Members management
+- `uso.png` – Software in use
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Getting Started
 
-## Learn More
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Run the development server:
+   ```bash
+   npm run dev
+   ```
+3. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-To learn more about Next.js, take a look at the following resources:
+## 🧰 Tech Stack
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🤝 Contributing
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📄 License
+[MIT](LICENSE)
