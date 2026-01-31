@@ -13,20 +13,20 @@ export default function Features() {
 
     const images = {
         'item-1': {
-            image: '/software/Cardapio.png',
-            alt: 'Database visualization',
+            image: '/software/cardapio.png',
+            alt: 'Cardápio Digital por QR Code',
         },
         'item-2': {
-            image: '/image3.webp',
-            alt: 'Security authentication',
+            image: '/software/mesas.png',
+            alt: 'Sistema de Reservas e Gestão de Mesas',
         },
         'item-3': {
-            image: '/image3.webp',
-            alt: 'Identity management',
+            image: '/software/pedidos.png',
+            alt: 'Notificações e Gestão de Pedidos em Tempo Real',
         },
         'item-4': {
-            image: '/image3.webp',
-            alt: 'Analytics dashboard',
+            image: '/software/dashboard.png',
+            alt: 'Relatórios e Dashboard Analítico',
         },
     }
 

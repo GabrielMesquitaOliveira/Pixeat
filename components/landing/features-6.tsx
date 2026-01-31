@@ -16,7 +16,7 @@ export default function FeaturesSection() {
                             className="block"
                             animationStyle="from-center"
                             videoSrc="https://www.youtube.com/watch?time_continue=1&v=zYR53vO42W4&embeds_referring_euri=https%3A%2F%2Fwww.menutiger.com%2F&source_ve_path=MjM4NTE"
-                            thumbnailSrc="/Dashboard.png"
+                            thumbnailSrc="/software/dashboard.png"
                         />
                     </div>
                 </div>
