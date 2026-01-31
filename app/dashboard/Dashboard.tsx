@@ -1,7 +1,8 @@
-import { Card } from "@/components/ui/card";
-import { TrendingUp, TrendingDown, ArrowUpRight } from "lucide-react";
+import { TrendingUp, TrendingDown, ArrowUpRight, Eye } from "lucide-react";
 import { Area, AreaChart, CartesianGrid, XAxis, YAxis, ResponsiveContainer } from "recharts";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 const salesData = [
   { date: "2 abr", value: 890, range1: 750, range2: 950 },
@@ -99,16 +100,32 @@ function StatCard({ title, value, trend, subtitle, color = "text-foreground" }: 
   );
 }
 
-export function Dashboard() {
+interface DashboardProps {
+  onNavigate?: (page: string) => void;
+}
+
+export function Dashboard({ onNavigate }: DashboardProps) {
   return (
-    <div className="p-8 space-y-6 bg-gradient-to-b from-secondary/30 to-background">
+    <div className="p-8 space-y-6 bg-slate-50">
       {/* Header */}
-      <div className="space-y-3">
-        <h1 className="text-3xl mb-2">Bem-vinda de volta, Ana</h1>
-        <p className="text-muted-foreground">
-          Estamos felizes em tê-la novamente. Aqui estão as atualizações mais recentes do sistema e os atalhos para começar: 
-          acompanhe seus pedidos, gerencie clientes e monitore os resultados em tempo real. 🚀
-        </p>
+      <div className="flex items-start justify-between">
+        <div className="space-y-3">
+          <h1 className="text-3xl mb-2">Bem-vinda de volta, Ana</h1>
+          <p className="text-muted-foreground">
+            Estamos felizes em tê-la novamente. Aqui estão as atualizações mais recentes do sistema e os atalhos para começar:
+            acompanhe seus pedidos, gerencie clientes e monitore os resultados em tempo real. 🚀
+          </p>
+        </div>
+        {onNavigate && (
+          <Button
+            variant="outline"
+            className="gap-2"
+            onClick={() => onNavigate("cardapio-digital")}
+          >
+            <Eye className="w-4 h-4" />
+            Preview Cardápio
+          </Button>
+        )}
       </div>
 
       {/* Stats Grid */}

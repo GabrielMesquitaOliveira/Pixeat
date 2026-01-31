@@ -35,8 +35,8 @@ export default function ContentSection() {
                     </div>
                     <div className="relative mt-6 sm:mt-0">
                         <div className="bg-linear-to-b aspect-67/34 relative rounded-2xl from-zinc-100 to-transparent p-px dark:from-zinc-700">
-                            <Image src="/image2.webp" className="hidden rounded-[15px] dark:block" alt="payments illustration dark" width={1206} height={612} />
-                            <Image src="/image2.webp" className="rounded-[15px] shadow dark:hidden" alt="payments illustration light" width={1206} height={612} />
+                            <Image src="/software/uso.png" className="hidden rounded-[15px] dark:block" alt="Pixeat em uso" width={1206} height={612} />
+                            <Image src="/software/uso.png" className="rounded-[15px] shadow dark:hidden" alt="Pixeat em uso" width={1206} height={612} />
                         </div>
                     </div>
                 </div>
