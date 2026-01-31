@@ -7,7 +7,7 @@ export default function ContentSection() {
             <div className="mx-auto max-w-6xl space-y-8 px-6 md:space-y-16">
                 <div className="grid gap-6 sm:grid-cols-2 md:gap-12 lg:gap-24">
                     <div className="relative mb-6 sm:mb-0">
-                        <div className="bg-linear-to-b aspect-76/59 relative rounded-2xl from-zinc-100 to-transparent p-px dark:from-zinc-700">
+                        <div className="bg-linear-to-b aspect-76/59 relative rounded-2xl from-slate-100 to-transparent p-px dark:from-slate-700">
                             <Image src="/software/qrcodes.png" className="hidden rounded-[15px] dark:block" alt="Sistema de QR Codes" width={1207} height={929} />
                             <Image src="/software/qrcodes.png" className="rounded-[15px] shadow dark:hidden" alt="Sistema de QR Codes" width={1207} height={929} />
                         </div>

@@ -9,7 +9,7 @@ export default function StatsSection() {
                     <p className="text-lg text-muted-foreground">{CONTENT.benefits.description}</p>
                 </div>
 
-                <div className="grid gap-0.5 *:text-center md:grid-cols-3 dark:[--color-muted:var(--color-zinc-900)]">
+                <div className="grid gap-0.5 *:text-center md:grid-cols-3 dark:[--color-muted:var(--color-slate-900)]">
                     <div className="bg-muted rounded-(--radius) space-y-4 py-12">
                         <div className="text-5xl font-bold">{CONTENT.benefits.stats[0].value}</div>
                         <p>{CONTENT.benefits.stats[0].label}</p>

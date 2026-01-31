@@ -86,9 +86,9 @@ export default function HeroSection() {
                                 <AnimatedGroup variants={transitionVariants}>
                                     <Link
                                         href="#link"
-                                        className="hover:bg-background dark:hover:border-t-border bg-muted group mx-auto flex w-fit items-center gap-4 rounded-full border p-1 pl-4 shadow-md shadow-zinc-950/5 transition-colors duration-300 dark:border-t-white/5 dark:shadow-zinc-950">
+                                        className="hover:bg-background dark:hover:border-t-border bg-muted group mx-auto flex w-fit items-center gap-4 rounded-full border p-1 pl-4 shadow-md shadow-slate-950/5 transition-colors duration-300 dark:border-t-white/5 dark:shadow-slate-950">
                                         <span className="text-foreground text-sm">{CONTENT.hero.eyebrow}</span>
-                                        <span className="dark:border-background block h-4 w-0.5 border-l bg-white dark:bg-zinc-700"></span>
+                                        <span className="dark:border-background block h-4 w-0.5 border-l bg-white dark:bg-slate-700"></span>
                                         <div className="bg-background group-hover:bg-muted size-6 overflow-hidden rounded-full duration-500">
                                             <div className="flex w-12 -translate-x-1/2 duration-500 ease-in-out group-hover:translate-x-0">
                                                 <span className="flex size-6">
@@ -170,7 +170,7 @@ export default function HeroSection() {
                                 ...transitionVariants,
                             }}>
                             <div className="mask-b-from-55% relative -mr-56 mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-12 md:mt-20">
-                                <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
+                                <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-slate-950/15 ring-1">
                                     <Image
                                         className="bg-background aspect-video relative hidden rounded-2xl dark:block"
                                         src="/software/dashboard.png"
