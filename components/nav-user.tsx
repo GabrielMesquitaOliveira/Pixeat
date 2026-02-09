@@ -4,7 +4,6 @@ import {
   IconBuildings,
   IconCreditCard,
   IconDotsVertical,
-  IconLogout,
   IconNotification,
   IconUserCircle,
 } from "@tabler/icons-react"
@@ -14,6 +13,10 @@ import {
   AvatarFallback,
   AvatarImage,
 } from "@/components/ui/avatar"
+import {
+  ClerkOrganizationSwitcher,
+  ClerkUserButton,
+} from "@/components/clerk/ClerkWidgets"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -33,10 +36,10 @@ import {
 export function NavUser({
   user,
 }: {
-  user: {
-    name: string
-    email: string
-    avatar: string
+  readonly user: {
+    readonly name: string
+    readonly email: string
+    readonly avatar: string
   }
 }) {
   const { isMobile } = useSidebar()
@@ -69,6 +72,9 @@ export function NavUser({
             align="end"
             sideOffset={4}
           >
+            <div className="px-3 py-2">
+              <ClerkOrganizationSwitcher />
+            </div>
             <DropdownMenuLabel className="p-0 font-normal">
               <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
                 <Avatar className="h-8 w-8 rounded-lg">
@@ -103,10 +109,9 @@ export function NavUser({
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>
-              <IconLogout />
-              Sair
-            </DropdownMenuItem>
+            <div className="px-3 py-2">
+              <ClerkUserButton />
+            </div>
           </DropdownMenuContent>
         </DropdownMenu>
       </SidebarMenuItem>

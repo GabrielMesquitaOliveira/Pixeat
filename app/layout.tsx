@@ -4,6 +4,7 @@ import {
 } from '@clerk/nextjs'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
+
 // Header moved to landing-specific pages so dashboard isn't affected
 import { ptBR } from '@clerk/localizations'
 import { shadcn } from '@clerk/themes'
@@ -36,21 +37,21 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <ClerkProvider localization={ptBR} appearance={{
-      theme: shadcn,
-    }}>
-      <html lang="pt-BR">
-        <head>
-          <meta charSet="UTF-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-          <link rel="manifest" href="/manifest.json" />
-          <meta name="theme-color" content="#000000" />
-        </head>
-        <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-          {children}
-        </body>
-      </html>
-    </ClerkProvider>
+      <ClerkProvider localization={ptBR} appearance={{
+        theme: shadcn,
+      }}>
+        <html lang="pt-BR">
+          <head>
+            <meta charSet="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+            <link rel="manifest" href="/manifest.json" />
+            <meta name="theme-color" content="#000000" />
+          </head>
+          <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+            {children}
+          </body>
+        </html>
+      </ClerkProvider>
   )
 }
