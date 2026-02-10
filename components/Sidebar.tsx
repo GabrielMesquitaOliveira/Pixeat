@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { Home, ShoppingBag, ClipboardList, QrCode, Settings, Users, HelpCircle, CreditCard, UserCog, Shield } from "lucide-react";
-import { UserButton, useUser } from "@clerk/nextjs";
-import { ClerkOrganizationSwitcher } from "./clerk/ClerkWidgets";
+import { useUser } from "@clerk/nextjs";
+import { ClerkOrganizationSwitcher, ClerkUserButton } from "./clerk/ClerkWidgets";
 
 interface SidebarProps {
   readonly currentPage: string;
@@ -83,7 +83,7 @@ export function Sidebar({ currentPage, onPageChange }: SidebarProps) {
         <ClerkOrganizationSwitcher />
 
         <div className="mt-4 flex items-center gap-3 px-4 py-3">
-          <UserButton />
+          <ClerkUserButton />
           <div className="flex-1 min-w-0">
             <p className="text-sm truncate">{user?.fullName ?? "Convidado"}</p>
             <p className="text-xs text-muted-foreground truncate">{user?.primaryEmailAddress?.emailAddress ?? ""}</p>
