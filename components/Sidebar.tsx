@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import * as React from "react";
 import { Home, ShoppingBag, ClipboardList, QrCode, Settings, Users, HelpCircle, CreditCard, UserCog, Shield } from "lucide-react";
 import { useUser } from "@clerk/nextjs";
 import { ClerkOrganizationSwitcher, ClerkUserButton } from "./clerk/ClerkWidgets";
@@ -13,6 +14,13 @@ interface SidebarProps {
 export function Sidebar({ currentPage, onPageChange }: SidebarProps) {
 
   const { user } = useUser();
+  const profileRef = React.useRef<HTMLButtonElement | null>(null);
+
+  function handleProfileClick() {
+    const container = profileRef.current?.closest("div");
+    const clerkBtn = container?.querySelector("button:first-child") as HTMLButtonElement | null;
+    if (clerkBtn) clerkBtn.click();
+  }
 
   const menuItems = [
     { id: "dashboard", label: "Dashboard", icon: Home },
@@ -82,12 +90,18 @@ export function Sidebar({ currentPage, onPageChange }: SidebarProps) {
 
         <ClerkOrganizationSwitcher />
 
-        <div className="mt-4 flex items-center gap-3 px-4 py-3">
+        <div className="mt-4 flex items-center gap-3 px-2 py-3">
           <ClerkUserButton />
-          <div className="flex-1 min-w-0">
-            <p className="text-sm truncate">{user?.fullName ?? "Convidado"}</p>
-            <p className="text-xs text-muted-foreground truncate">{user?.primaryEmailAddress?.emailAddress ?? ""}</p>
-          </div>
+          <button
+            ref={profileRef}
+            className="flex-1 flex items-center min-w-0 bg-transparent hover:bg-sidebar-accent/50 rounded-lg transition-colors cursor-pointer border-none text-left p-2"
+            onClick={handleProfileClick}
+          >
+            <div className="flex-1 min-w-0">
+              <p className="text-sm truncate">{user?.fullName ?? "Convidado"}</p>
+              <p className="text-xs text-muted-foreground truncate">{user?.primaryEmailAddress?.emailAddress ?? ""}</p>
+            </div>
+          </button>
         </div>
       </div>
     </div>
