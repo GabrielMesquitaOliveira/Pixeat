@@ -28,7 +28,7 @@ export function ClerkCreateOrganization() {
 export function ClerkOrganizationProfile() {
   return (
     <div className="p-4">
-      <OrganizationProfile />
+      <OrganizationProfile routing="hash" />
     </div>
   );
 }

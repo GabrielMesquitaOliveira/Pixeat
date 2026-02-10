@@ -4,7 +4,6 @@ import Image from "next/image";
 import { Home, ShoppingBag, ClipboardList, QrCode, Settings, Users, HelpCircle, CreditCard, UserCog, Shield } from "lucide-react";
 import { UserButton, useUser } from "@clerk/nextjs";
 import { ClerkOrganizationSwitcher } from "./clerk/ClerkWidgets";
-import { useMounted } from "../hooks/useMountedStore";
 
 interface SidebarProps {
   readonly currentPage: string;
@@ -14,8 +13,6 @@ interface SidebarProps {
 export function Sidebar({ currentPage, onPageChange }: SidebarProps) {
 
   const { user } = useUser();
-
-  const mounted = useMounted();
 
   const menuItems = [
     { id: "dashboard", label: "Dashboard", icon: Home },
@@ -82,21 +79,16 @@ export function Sidebar({ currentPage, onPageChange }: SidebarProps) {
         })}
 
         {/* User Profile */}
-        {mounted ? (
-          <>
-            <ClerkOrganizationSwitcher />
 
-            <div className="mt-4 flex items-center gap-3 px-4 py-3">
-              <UserButton />
-              <div className="flex-1 min-w-0">
-                <p className="text-sm truncate">{user?.fullName ?? "Convidado"}</p>
-                <p className="text-xs text-muted-foreground truncate">{user?.primaryEmailAddress?.emailAddress ?? ""}</p>
-              </div>
-            </div>
-          </>
-        ) : (
-          <div className="mt-4 px-4 py-3">{/* placeholder while hydrating */}</div>
-        )}
+        <ClerkOrganizationSwitcher />
+
+        <div className="mt-4 flex items-center gap-3 px-4 py-3">
+          <UserButton />
+          <div className="flex-1 min-w-0">
+            <p className="text-sm truncate">{user?.fullName ?? "Convidado"}</p>
+            <p className="text-xs text-muted-foreground truncate">{user?.primaryEmailAddress?.emailAddress ?? ""}</p>
+          </div>
+        </div>
       </div>
     </div>
   );
