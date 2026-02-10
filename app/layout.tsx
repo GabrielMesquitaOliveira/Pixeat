@@ -36,7 +36,7 @@ export default function RootLayout({
 }>) {
   return (
       <ClerkProvider localization={ptBR} appearance={{ theme: shadcn }}>
-        <html lang="pt-BR">
+        <html lang="pt-BR" suppressHydrationWarning>
           <head>
             <meta charSet="UTF-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />

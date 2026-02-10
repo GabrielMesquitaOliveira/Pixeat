@@ -1,14 +1,23 @@
 "use client";
 
+import * as React from "react";
 import { Home, ShoppingBag, ClipboardList, QrCode, Settings, Users, HelpCircle, CreditCard, UserCog, Shield } from "lucide-react";
-import { OrganizationSwitcher, UserButton, useUser } from "@clerk/nextjs";
+import { UserButton, useUser } from "@clerk/nextjs";
+import { ClerkOrganizationSwitcher } from "./clerk/ClerkWidgets";
 
 interface SidebarProps {
-  currentPage: string;
-  onPageChange: (page: string) => void;
+  readonly currentPage: string;
+  readonly onPageChange: (page: string) => void;
 }
 
 export function Sidebar({ currentPage, onPageChange }: SidebarProps) {
+
+  const { user } = useUser();
+  const [mounted, setMounted] = React.useState(false);
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const menuItems = [
     { id: "dashboard", label: "Dashboard", icon: Home },
     { id: "pedidos", label: "Pedidos", icon: ClipboardList },
@@ -74,22 +83,21 @@ export function Sidebar({ currentPage, onPageChange }: SidebarProps) {
         })}
 
         {/* User Profile */}
-        <OrganizationSwitcher/>
-        <UserProfile />
-      </div>
-    </div>
-  );
-}
+        {mounted ? (
+          <>
+            <ClerkOrganizationSwitcher />
 
-function UserProfile() {
-  const { user } = useUser();
-
-  return (
-    <div className="mt-4 flex items-center gap-3 px-4 py-3">
-      <UserButton />
-      <div className="flex-1 min-w-0">
-        <p className="text-sm truncate">{user?.fullName ?? "Convidado"}</p>
-        <p className="text-xs text-muted-foreground truncate">{user?.primaryEmailAddress?.emailAddress ?? ""}</p>
+            <div className="mt-4 flex items-center gap-3 px-4 py-3">
+              <UserButton />
+              <div className="flex-1 min-w-0">
+                <p className="text-sm truncate">{user?.fullName ?? "Convidado"}</p>
+                <p className="text-xs text-muted-foreground truncate">{user?.primaryEmailAddress?.emailAddress ?? ""}</p>
+              </div>
+            </div>
+          </>
+        ) : (
+          <div className="mt-4 px-4 py-3">{/* placeholder while hydrating */}</div>
+        )}
       </div>
     </div>
   );
