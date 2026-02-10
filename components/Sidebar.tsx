@@ -1,7 +1,7 @@
 "use client";
 
 import { Home, ShoppingBag, ClipboardList, QrCode, Settings, Users, HelpCircle, CreditCard, UserCog, Shield } from "lucide-react";
-import { UserButton, useUser } from "@clerk/nextjs";
+import { OrganizationSwitcher, UserButton, useUser } from "@clerk/nextjs";
 
 interface SidebarProps {
   currentPage: string;
@@ -42,8 +42,8 @@ export function Sidebar({ currentPage, onPageChange }: SidebarProps) {
               key={item.id}
               onClick={() => onPageChange(item.id)}
               className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${isActive
-                  ? "bg-primary text-primary-foreground shadow-sm"
-                  : "text-sidebar-foreground hover:bg-sidebar-accent"
+                ? "bg-primary text-primary-foreground shadow-sm"
+                : "text-sidebar-foreground hover:bg-sidebar-accent"
                 }`}
             >
               <Icon className="w-5 h-5" />
@@ -63,8 +63,8 @@ export function Sidebar({ currentPage, onPageChange }: SidebarProps) {
               key={item.id}
               onClick={() => onPageChange(item.id)}
               className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${isActive
-                  ? "bg-sidebar-accent text-sidebar-primary"
-                  : "text-sidebar-foreground hover:bg-sidebar-accent/50"
+                ? "bg-sidebar-accent text-sidebar-primary"
+                : "text-sidebar-foreground hover:bg-sidebar-accent/50"
                 }`}
             >
               <Icon className="w-5 h-5" />
@@ -74,6 +74,7 @@ export function Sidebar({ currentPage, onPageChange }: SidebarProps) {
         })}
 
         {/* User Profile */}
+        <OrganizationSwitcher/>
         <UserProfile />
       </div>
     </div>
