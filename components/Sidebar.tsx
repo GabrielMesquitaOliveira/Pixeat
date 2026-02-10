@@ -1,6 +1,6 @@
 "use client";
 
-import * as React from "react";
+import Image from "next/image";
 import { Home, ShoppingBag, ClipboardList, QrCode, Settings, Users, HelpCircle, CreditCard, UserCog, Shield } from "lucide-react";
 import { UserButton, useUser } from "@clerk/nextjs";
 import { ClerkOrganizationSwitcher } from "./clerk/ClerkWidgets";
@@ -33,13 +33,11 @@ export function Sidebar({ currentPage, onPageChange }: SidebarProps) {
     { id: "ajuda", label: "Obtenha ajuda", icon: HelpCircle },
   ];
 
-
-
   return (
     <div className="w-64 bg-white border-r border-border h-screen flex flex-col">
       {/* Logo */}
       <div className="p-6 border-b border-border">
-        <img src="/logo.png" alt="Pixeat" className="h-10" />
+        <Image src="/logo.png" alt="Pixeat" width={100} height={80} priority />
       </div>
 
       {/* Menu Items */}
