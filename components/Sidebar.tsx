@@ -1,5 +1,7 @@
+"use client";
+
 import { Home, ShoppingBag, ClipboardList, QrCode, Settings, Users, HelpCircle, CreditCard, UserCog, Shield } from "lucide-react";
-import logoImage from "figma:asset/dc452183b61bdbe8e297c261bf887352aeaaad37.png";
+import { UserButton, useUser } from "@clerk/nextjs";
 
 interface SidebarProps {
   currentPage: string;
@@ -72,15 +74,21 @@ export function Sidebar({ currentPage, onPageChange }: SidebarProps) {
         })}
 
         {/* User Profile */}
-        <div className="mt-4 flex items-center gap-3 px-4 py-3">
-          <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-            <span className="text-primary">GM</span>
-          </div>
-          <div className="flex-1 min-w-0">
-            <p className="text-sm truncate">Gabriel Mesquita</p>
-            <p className="text-xs text-muted-foreground truncate">gabrielmesquita@gmail.com</p>
-          </div>
-        </div>
+        <UserProfile />
+      </div>
+    </div>
+  );
+}
+
+function UserProfile() {
+  const { user } = useUser();
+
+  return (
+    <div className="mt-4 flex items-center gap-3 px-4 py-3">
+      <UserButton />
+      <div className="flex-1 min-w-0">
+        <p className="text-sm truncate">{user?.fullName ?? "Convidado"}</p>
+        <p className="text-xs text-muted-foreground truncate">{user?.primaryEmailAddress?.emailAddress ?? ""}</p>
       </div>
     </div>
   );

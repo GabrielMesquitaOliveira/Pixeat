@@ -26,23 +26,25 @@ function ClerkSettingsControls() {
         <OrganizationSwitcher />
         <CreateOrganization />
       </div>
-      <div>
-        <UserButton />
-      </div>
     </div>
   );
 }
 
 export default function OrganizationSettingsPage() {
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-semibold mb-4">Configurações da Empresa</h1>
-      <div className="mb-6">
-        <ClerkSettingsControls />
-      </div>
-      <div className="bg-card rounded-md p-4">
-        <ClerkOrganizationProfile />
-      </div>
+    <div className="max-w-5xl mx-auto p-6 space-y-6">
+      <header className="flex flex-col gap-4">
+        <h1 className="text-2xl font-semibold">Configurações da Empresa</h1>
+        <div className="w-full sm:w-auto">
+          <ClerkSettingsControls />
+        </div>
+      </header>
+
+      <main>
+        <div className="bg-card rounded-md p-6">
+          <ClerkOrganizationProfile />
+        </div>
+      </main>
     </div>
   );
 }

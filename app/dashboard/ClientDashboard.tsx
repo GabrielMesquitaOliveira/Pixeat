@@ -11,11 +11,10 @@ import { Mesas } from "./Mesas/Mesas";
 import { Pedidos } from "./Pedidos/Pedidos";
 import { QRCodes } from "./QRcodes/QRCodes";
 import { UsoCota } from "./UsoCota/UsoCota";
-import OrganizationSettingsPage from "./Settings/page";
+import OrganizationSettingsPage from "./Settings/OrganizationSettingsPage";
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState("dashboard");
-  const [viewMode, setViewMode] = useState<"admin" | "customer">("admin");
 
   const renderPage = () => {
     switch (currentPage) {
