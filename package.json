@@ -9,9 +9,8 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@clerk/clerk-react": "^5.60.0",
     "@clerk/localizations": "^3.32.1",
-    "@clerk/nextjs": "^6.36.5",
+    "@clerk/nextjs": "^6.37.3",
     "@clerk/themes": "^2.4.46",
     "@dnd-kit/core": "^6.3.1",
     "@dnd-kit/modifiers": "^9.0.0",
