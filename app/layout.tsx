@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { ClerkProvider } from '@clerk/nextjs'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
+import MountElement from "../components/MountElement";
 
 // Header moved to landing-specific pages so dashboard isn't affected
 import { ptBR } from '@clerk/localizations'
@@ -45,6 +46,7 @@ export default function RootLayout({
             <meta name="theme-color" content="#000000" />
           </head>
           <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+            <MountElement />
             {children}
           </body>
         </html>
