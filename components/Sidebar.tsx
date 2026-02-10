@@ -4,6 +4,7 @@ import * as React from "react";
 import { Home, ShoppingBag, ClipboardList, QrCode, Settings, Users, HelpCircle, CreditCard, UserCog, Shield } from "lucide-react";
 import { UserButton, useUser } from "@clerk/nextjs";
 import { ClerkOrganizationSwitcher } from "./clerk/ClerkWidgets";
+import { useMounted, useSetMounted } from "../hooks/useMountedStore";
 
 interface SidebarProps {
   readonly currentPage: string;
@@ -13,10 +14,9 @@ interface SidebarProps {
 export function Sidebar({ currentPage, onPageChange }: SidebarProps) {
 
   const { user } = useUser();
-  const [mounted, setMounted] = React.useState(false);
-  React.useEffect(() => {
-    setMounted(true);
-  }, []);
+
+  const mounted = useMounted();
+  const setMounted = useSetMounted();
 
   const menuItems = [
     { id: "dashboard", label: "Dashboard", icon: Home },
@@ -33,6 +33,11 @@ export function Sidebar({ currentPage, onPageChange }: SidebarProps) {
     { id: "configuracoes", label: "Configurações", icon: Settings },
     { id: "ajuda", label: "Obtenha ajuda", icon: HelpCircle },
   ];
+
+  React.useEffect(() => {
+    const id = setTimeout(() => setMounted(true), 0);
+    return () => clearTimeout(id);
+  }, [setMounted]);
 
   return (
     <div className="w-64 bg-white border-r border-border h-screen flex flex-col">
