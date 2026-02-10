@@ -1,7 +1,5 @@
 import type { Metadata } from 'next'
-import {
-  ClerkProvider,
-} from '@clerk/nextjs'
+import { ClerkProvider } from '@clerk/nextjs'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 
@@ -37,9 +35,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-      <ClerkProvider localization={ptBR} appearance={{
-        theme: shadcn,
-      }}>
+      <ClerkProvider localization={ptBR} appearance={{ theme: shadcn }}>
         <html lang="pt-BR">
           <head>
             <meta charSet="UTF-8" />

@@ -11,6 +11,7 @@ import { Mesas } from "./Mesas/Mesas";
 import { Pedidos } from "./Pedidos/Pedidos";
 import { QRCodes } from "./QRcodes/QRCodes";
 import { UsoCota } from "./UsoCota/UsoCota";
+import OrganizationSettingsPage from "./Settings/page";
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState("dashboard");
@@ -37,14 +38,7 @@ export default function App() {
       case "logs-auditoria":
         return <LogsAuditoria />;
       case "configuracoes":
-        return (
-          <div className="p-8">
-            <h1 className="text-3xl mb-2">Configurações</h1>
-            <p className="text-muted-foreground">
-              Página em desenvolvimento...
-            </p>
-          </div>
-        );
+        return <OrganizationSettingsPage />;
       case "ajuda":
         return (
           <div className="p-8">
