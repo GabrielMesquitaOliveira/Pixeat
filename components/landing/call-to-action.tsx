@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { SignUpButton } from '@clerk/nextjs'
 import { Highlighter } from '@/components/ui/highlighter'
 import { motion } from 'motion/react'
+import { ShimmerButton } from '@/components/ui/shimmer-button'
 
 export default function CallToAction() {
     return (
@@ -63,9 +64,9 @@ export default function CallToAction() {
                             variants={{ hidden: { opacity: 0, y: 12 }, visible: { opacity: 1, y: 0 } }}
                             transition={{ duration: 0.4, ease: 'easeOut' }}>
                             <SignUpButton mode="modal">
-                                <Button size="lg">
+                                <ShimmerButton background="var(--primary)" className="h-11 rounded-xl px-6">
                                     <span>{CONTENT.ctaFinal.cta.primary}</span>
-                                </Button>
+                                </ShimmerButton>
                             </SignUpButton>
                         </motion.div>
 

@@ -11,6 +11,7 @@ import { type ComponentRef, useRef, useState } from "react"
 import confetti from "canvas-confetti"
 import NumberFlow from "@number-flow/react"
 import { SignUpButton } from "@clerk/nextjs"
+import { ShimmerButton } from "@/components/ui/shimmer-button"
 
 interface PricingPlan {
     name: string
@@ -220,12 +221,18 @@ export function Pricing({
                             <hr className="my-4 w-full" />
 
                             <SignUpButton mode="modal">
-                                <Button
-                                    className="w-full text-lg font-semibold tracking-tighter"
-                                    variant={plan.isPopular ? "default" : "outline"}
-                                >
-                                    {plan.buttonText}
-                                </Button>
+                                {plan.buttonText.toLowerCase().startsWith("começar") ? (
+                                    <ShimmerButton background="var(--primary)" className="h-11 w-full rounded-xl px-6 text-lg font-semibold tracking-tighter">
+                                        {plan.buttonText}
+                                    </ShimmerButton>
+                                ) : (
+                                    <Button
+                                        className="w-full text-lg font-semibold tracking-tighter"
+                                        variant={plan.isPopular ? "default" : "outline"}
+                                    >
+                                        {plan.buttonText}
+                                    </Button>
+                                )}
                             </SignUpButton>
                             <p className="mt-6 text-xs leading-5 text-muted-foreground">{plan.description}</p>
                         </div>

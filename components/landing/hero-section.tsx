@@ -7,6 +7,7 @@ import { TextEffect } from '@/components/ui/text-effect'
 import { AnimatedGroup } from '@/components/ui/animated-group'
 import { AuroraBackground } from '@/components/ui/aurora-background'
 import { BorderBeam } from '@/components/ui/border-beam'
+import { ShimmerButton } from '@/components/ui/shimmer-button'
 import { CONTENT } from '../../content'
 import { SignUpButton } from '@clerk/nextjs'
 
@@ -134,17 +135,14 @@ export default function HeroSection() {
                                         ...transitionVariants,
                                     }}
                                     className="mt-12 flex flex-col items-center justify-center gap-2 md:flex-row">
-                                    <div
-                                        key={1}
-                                        className="bg-foreground/10 rounded-[calc(var(--radius-xl)+0.125rem)] border p-0.5">
-                                        <SignUpButton mode="modal">
-                                            <Button
-                                                size="lg"
-                                                className="rounded-xl px-5 text-base">
-                                                <span className="text-nowrap">{CONTENT.hero.cta.primary}</span>
-                                            </Button>
-                                        </SignUpButton>
-                                    </div>
+                                    <SignUpButton mode="modal" key={1}
+                                    >
+                                        <ShimmerButton
+                                            background="var(--primary)"
+                                            className="h-11 rounded-xl px-5 text-base">
+                                            <span className="text-nowrap">{CONTENT.hero.cta.primary}</span>
+                                        </ShimmerButton>
+                                    </SignUpButton>
                                     <Button
                                         key={2}
                                         asChild

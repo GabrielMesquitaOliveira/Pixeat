@@ -80,17 +80,19 @@ export default function Home() {
         <GoogleAnalytics measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
       )}
       <SchemaMarkup />
-      <HeroHeader />
-      <HeroSection />
-      <ContentSection />
-      <FeaturesSection />
-      <Features />
-      <StatsSection />
-      <Pricing />
-      <FAQsFour />
-      <CallToAction />
-      <FooterSection />
-      <WhatsAppButton />
+      <div className="landing-hover-pop">
+        <HeroHeader />
+        <HeroSection />
+        <ContentSection />
+        <FeaturesSection />
+        <Features />
+        <StatsSection />
+        <Pricing />
+        <FAQsFour />
+        <CallToAction />
+        <FooterSection />
+        <WhatsAppButton />
+      </div>
     </>
   );
 }
