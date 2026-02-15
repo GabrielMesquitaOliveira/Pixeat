@@ -12,6 +12,7 @@ import { Metadata } from 'next'
 import SchemaMarkup from '@/components/schema-markup'
 import GoogleAnalytics from '@/components/google-analytics'
 import WhatsAppButton from '@/components/whatsapp-button'
+import WheelSmoothScroll from '@/components/landing/wheel-smooth-scroll'
 
 export const metadata: Metadata = {
   title: 'Pixeat - Autoatendimento Inteligente para Restaurantes | QR Code e Reservas Online',
@@ -76,6 +77,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
+      <WheelSmoothScroll />
       {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
         <GoogleAnalytics measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
       )}
