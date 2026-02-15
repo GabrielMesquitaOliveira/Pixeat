@@ -176,11 +176,6 @@ export const CONTENT = {
         description:
           "Cliente digita o próprio pedido, zero ruído na comunicação",
       },
-      {
-        value: "24h",
-        label: "Tempo de implementação",
-        description: "Em um dia você já está operando com o sistema completo",
-      },
     ],
   },
 
@@ -434,9 +429,8 @@ export const CONTENT = {
       phone: "+55 11 99999-9999",
       whatsapp: "+55 11 99999-9999",
     },
-    copyright: `© ${
-      new Date().getFullYear()
-    } Pixeat. Todos os direitos reservados.`,
+    copyright: `© ${new Date().getFullYear()
+      } Pixeat. Todos os direitos reservados.`,
   },
 };
 
