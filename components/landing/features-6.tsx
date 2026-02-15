@@ -1,6 +1,6 @@
 "use client"
 
-import { Cpu, Lock, Zap } from 'lucide-react'
+import { LayoutDashboard, QrCode, ShoppingCart } from 'lucide-react'
 import { CONTENT } from '@/content'
 import { HeroVideoDialog } from '../ui/hero-video-dialog'
 import { motion } from 'motion/react'
@@ -77,7 +77,7 @@ export default function FeaturesSection() {
                         variants={{ hidden: { opacity: 0, y: 18 }, visible: { opacity: 1, y: 0 } }}
                         transition={{ duration: 0.45, ease: 'easeOut' }}>
                         <div className="flex items-center gap-2">
-                            <Zap className="size-4" />
+                            <QrCode className="size-4" />
                             <h3 className="text-base font-medium">{CONTENT.howItWorks.steps[0].title}</h3>
                         </div>
                         <p className="text-muted-foreground text-sm">{CONTENT.howItWorks.steps[0].description}</p>
@@ -87,7 +87,7 @@ export default function FeaturesSection() {
                         variants={{ hidden: { opacity: 0, y: 18 }, visible: { opacity: 1, y: 0 } }}
                         transition={{ duration: 0.45, ease: 'easeOut' }}>
                         <div className="flex items-center gap-2">
-                            <Cpu className="size-4" />
+                            <ShoppingCart className="size-4" />
                             <h3 className="text-base font-medium">{CONTENT.howItWorks.steps[1].title}</h3>
                         </div>
                         <p className="text-muted-foreground text-sm">{CONTENT.howItWorks.steps[1].description}</p>
@@ -97,7 +97,7 @@ export default function FeaturesSection() {
                         variants={{ hidden: { opacity: 0, y: 18 }, visible: { opacity: 1, y: 0 } }}
                         transition={{ duration: 0.45, ease: 'easeOut' }}>
                         <div className="flex items-center gap-2">
-                            <Lock className="size-4" />
+                            <LayoutDashboard className="size-4" />
                             <h3 className="text-base font-medium">{CONTENT.howItWorks.steps[2].title}</h3>
                         </div>
                         <p className="text-muted-foreground text-sm">{CONTENT.howItWorks.steps[2].description}</p>

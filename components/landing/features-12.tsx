@@ -1,6 +1,6 @@
 'use client'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
-import { ChartBarIncreasingIcon, Database, Fingerprint, IdCard } from 'lucide-react'
+import { BarChart3, BellRing, CalendarDays, QrCode } from 'lucide-react'
 import Image from 'next/image'
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
@@ -38,7 +38,7 @@ export default function Features() {
         },
     ] as const
 
-    const icons = [Database, Fingerprint, IdCard, ChartBarIncreasingIcon] as const
+    const icons = [QrCode, CalendarDays, BellRing, BarChart3] as const
     const activeIndex = featureItems.findIndex((item) => item.key === activeItem)
     const selectedImage = images[activeIndex] ?? images[0]
     const selectedAlt = selectedImage?.alt ?? 'Preview do recurso'
@@ -100,7 +100,7 @@ export default function Features() {
                             onValueChange={(value) => setActiveItem(value || featureItems[0]?.key || '')}
                             className="w-full">
                             {featureItems.map(({ key, feature }, index) => {
-                                const Icon = icons[index] ?? Database
+                                const Icon = icons[index] ?? QrCode
 
                                 return (
                                     <motion.div key={key} variants={{ hidden: { opacity: 0, x: -10 }, show: { opacity: 1, x: 0 } }}>
