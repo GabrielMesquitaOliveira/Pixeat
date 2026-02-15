@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { TextEffect } from '@/components/ui/text-effect'
 import { AnimatedGroup } from '@/components/ui/animated-group'
 import { AuroraBackground } from '@/components/ui/aurora-background'
+import { BorderBeam } from '@/components/ui/border-beam'
 import { CONTENT } from '../../content'
 import { SignUpButton } from '@clerk/nextjs'
 
@@ -172,6 +173,20 @@ export default function HeroSection() {
                             }}>
                             <div className="mask-b-from-55% relative -mr-56 mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-12 md:mt-20">
                                 <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
+                                    <BorderBeam
+                                        size={240}
+                                        duration={4}
+                                        borderWidth={4}
+                                        className="from-primary via-primary/70 to-transparent"
+                                    />
+                                    <BorderBeam
+                                        size={180}
+                                        duration={4}
+                                        delay={2}
+                                        reverse
+                                        borderWidth={4}
+                                        className="from-primary/40 via-primary/20 to-transparent"
+                                    />
                                     <Image
                                         className="bg-background aspect-video relative hidden rounded-2xl dark:block"
                                         src="/software/dashboard.png"

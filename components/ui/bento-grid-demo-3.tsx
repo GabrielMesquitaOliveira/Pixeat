@@ -52,7 +52,7 @@ const SkeletonOne = () => {
                     +<NumberTicker value={32} suffix="%" />
                 </Badge>
             </motion.div>
-            <motion.div initial={{ scaleX: 0.85, opacity: 0.7 }} animate={{ scaleX: 1, opacity: 1 }} transition={{ duration: 1.2 }} className="origin-left">
+            <motion.div initial={{ opacity: 0.7 }} animate={{ opacity: 1 }} transition={{ duration: 1.2 }}>
                 <Progress value={78} className="mb-3" />
             </motion.div>
             <AnimatedGroup
@@ -86,8 +86,28 @@ const SkeletonTwo = () => {
             </div>
             <Separator className="mb-2" />
             <AnimatedGroup
-                preset="blur-slide"
-                variants={{ container: { visible: { transition: { staggerChildren: 0.22 } } } }}
+                preset="slide"
+                variants={{
+                    container: {
+                        visible: {
+                            transition: {
+                                delayChildren: 0.25,
+                                staggerChildren: 0.3,
+                            },
+                        },
+                    },
+                    item: {
+                        hidden: { opacity: 0, y: 20 },
+                        visible: {
+                            opacity: 1,
+                            y: 0,
+                            transition: {
+                                duration: 0.7,
+                                ease: 'easeOut',
+                            },
+                        },
+                    },
+                }}
                 className="space-y-2 text-xs text-muted-foreground"
             >
                 <div className="rounded-md border bg-background p-2">Sem cebola → com cebola</div>
@@ -114,13 +134,13 @@ const SkeletonThree = () => {
             <div className="space-y-3 text-xs text-muted-foreground">
                 <div>
                     <div className="mb-1 flex justify-between"><span>Equipe ocupada</span><span><NumberTicker value={92} suffix="%" /></span></div>
-                    <motion.div initial={{ scaleX: 0.7, opacity: 0.7 }} whileInView={{ scaleX: 1, opacity: 1 }} viewport={{ once: true }} transition={{ duration: 1.2 }} className="origin-left">
+                    <motion.div initial={{ opacity: 0.7 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 1.2 }}>
                         <Progress value={92} />
                     </motion.div>
                 </div>
                 <div>
                     <div className="mb-1 flex justify-between"><span>Fila na cozinha</span><span><NumberTicker value={67} suffix="%" delay={0.2} /></span></div>
-                    <motion.div initial={{ scaleX: 0.7, opacity: 0.7 }} whileInView={{ scaleX: 1, opacity: 1 }} viewport={{ once: true }} transition={{ duration: 1.2, delay: 0.12 }} className="origin-left">
+                    <motion.div initial={{ opacity: 0.7 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 1.2, delay: 0.12 }}>
                         <Progress value={67} />
                     </motion.div>
                 </div>
@@ -183,7 +203,27 @@ const SkeletonFive = () => {
             <Separator className="mb-3" />
             <AnimatedGroup
                 preset="slide"
-                variants={{ container: { visible: { transition: { staggerChildren: 0.22 } } } }}
+                variants={{
+                    container: {
+                        visible: {
+                            transition: {
+                                delayChildren: 0.25,
+                                staggerChildren: 0.3,
+                            },
+                        },
+                    },
+                    item: {
+                        hidden: { opacity: 0, y: 20 },
+                        visible: {
+                            opacity: 1,
+                            y: 0,
+                            transition: {
+                                duration: 0.7,
+                                ease: 'easeOut',
+                            },
+                        },
+                    },
+                }}
                 className="space-y-2 text-xs text-muted-foreground"
             >
                 <div className="flex items-center justify-between"><span>Pedidos atrasados</span><span>--</span></div>
