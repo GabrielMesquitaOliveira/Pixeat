@@ -1,74 +1,48 @@
 "use client"
 
+import { CONTENT } from "@/content"
 import { Pricing } from "@/components/ui/pricing"
 
-const demoPlans = [
-    {
-        name: "STARTER",
-        price: "50",
-        yearlyPrice: "40",
-        period: "per month",
-        features: [
-            "Up to 10 projects",
-            "Basic analytics",
-            "48-hour support response time",
-            "Limited API access",
-            "Community support",
-        ],
-        description: "Perfect for individuals and small projects",
-        buttonText: "Start Free Trial",
-        href: "/sign-up",
-        isPopular: false,
-    },
-    {
-        name: "PROFESSIONAL",
-        price: "99",
-        yearlyPrice: "79",
-        period: "per month",
-        features: [
-            "Unlimited projects",
-            "Advanced analytics",
-            "24-hour support response time",
-            "Full API access",
-            "Priority support",
-            "Team collaboration",
-            "Custom integrations",
-        ],
-        description: "Ideal for growing teams and businesses",
-        buttonText: "Get Started",
-        href: "/sign-up",
-        isPopular: true,
-    },
-    {
-        name: "ENTERPRISE",
-        price: "299",
-        yearlyPrice: "239",
-        period: "per month",
-        features: [
-            "Everything in Professional",
-            "Custom solutions",
-            "Dedicated account manager",
-            "1-hour support response time",
-            "SSO Authentication",
-            "Advanced security",
-            "Custom contracts",
-            "SLA agreement",
-        ],
-        description: "For large organizations with specific needs",
-        buttonText: "Contact Sales",
-        href: "/contact",
-        isPopular: false,
-    },
-]
+const parseCurrencyValue = (value: string): number => {
+    const normalized = value.replace(/[^\d,.-]/g, "").replace(",", ".")
+    const parsed = Number(normalized)
+    return Number.isFinite(parsed) ? parsed : 0
+}
 
 function PricingBasic() {
+    const { pricing } = CONTENT
+
+    const plans = pricing.plans.map((plan) => {
+        const monthlyPrice = parseCurrencyValue(plan.price)
+        const yearlyPrice = parseCurrencyValue(plan.yearlyPrice)
+        const normalizedPeriod = plan.period.replace(/^\//, "")
+
+        return {
+            name: plan.name,
+            price: String(monthlyPrice),
+            yearlyPrice: String(yearlyPrice),
+            period: normalizedPeriod,
+            features: plan.features,
+            description: plan.description,
+            buttonText: plan.cta,
+            isPopular: !!plan.highlighted,
+        }
+    })
+
     return (
         <div className="h-[800px] overflow-y-auto rounded-lg">
             <Pricing
-                plans={demoPlans}
-                title="Simple, Transparent Pricing"
-                description={`Choose the plan that works for you
-All plans include access to our platform, lead generation tools, and dedicated support.`}
+                plans={plans}
+                title={pricing.title}
+                description={pricing.description}
+                labels={{
+                    annualBilling: pricing.labels.annualBilling,
+                    annualSavings: pricing.labels.annualSavings,
+                    billedMonthly: pricing.labels.billedMonthly,
+                    billedYearly: pricing.labels.billedYearly,
+                    popularBadge: pricing.labels.popularBadge,
+                    currencySymbol: pricing.labels.currencySymbol,
+                }}
             />
         </div>
     )
