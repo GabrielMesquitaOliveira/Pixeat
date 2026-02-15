@@ -3,7 +3,6 @@ export const menuItems = [
     { name: 'Problema', href: '#problemas' },
     { name: 'Recursos', href: '#recursos' },
     { name: 'Resultados', href: '#resultados' },
-    { name: 'Depoimentos', href: '#depoimentos' },
     { name: 'Preços', href: '#precos' },
     { name: 'FAQ', href: '#faq' },
     { name: 'Contato', href: '#cta' },

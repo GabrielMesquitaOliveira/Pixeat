@@ -83,13 +83,11 @@ export default function Home() {
       <SchemaMarkup />
       <HeroHeader />
       <HeroSection />
-      {/* <LogoCloud /> */}
       <ContentSection />
       <ContentSection2 />
       <FeaturesSection />
       <Features />
       <StatsSection />
-      {/* <Testimonials /> */}
       <Pricing />
       <FAQsFour />
       <CallToAction />
