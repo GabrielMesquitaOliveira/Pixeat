@@ -1,11 +1,17 @@
 import { CONTENT } from "@/content";
+import { Highlighter } from "@/components/ui/highlighter";
 
 export default function StatsSection() {
     return (
         <section id="resultados" className="py-16 md:py-24">
             <div className="mx-auto max-w-6xl space-y-8 px-6 md:space-y-16">
                 <div className="relative z-10 mx-auto space-y-6 text-center">
-                    <h2 className="text-4xl font-semibold lg:text-5xl">{CONTENT.benefits.title}</h2>
+                    <h2 className="text-4xl font-semibold lg:text-5xl">
+                        <Highlighter action="underline" color="#87CEFA" isView>
+                            Resultados
+                        </Highlighter>{" "}
+                        que você vai alcançar
+                    </h2>
                     <p className="text-lg text-muted-foreground">{CONTENT.benefits.description}</p>
                 </div>
 

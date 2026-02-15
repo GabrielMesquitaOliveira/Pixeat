@@ -2,6 +2,7 @@
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { CONTENT } from '@/content'
+import { Highlighter } from '@/components/ui/highlighter'
 // Link not used in this component
 
 export default function FAQsFour() {
@@ -9,7 +10,12 @@ export default function FAQsFour() {
         <section id="faq" className="py-16 md:py-24">
             <div className="mx-auto max-w-6xl px-4 md:px-6">
                 <div className="mx-auto text-center">
-                    <h2 className="text-balance text-3xl font-semibold md:text-4xl lg:text-5xl">{CONTENT.faq.title}</h2>
+                    <h2 className="text-balance text-3xl font-semibold md:text-4xl lg:text-5xl">
+                        Perguntas{' '}
+                        <Highlighter action="underline" color="#87CEFA" isView>
+                            frequentes
+                        </Highlighter>
+                    </h2>
                     <p className="text-muted-foreground mt-4 text-balance">{CONTENT.faq.description}</p>
                 </div>
 

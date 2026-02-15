@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Check } from 'lucide-react'
 import { CONTENT } from '@/content'
 import { SignUpButton } from '@clerk/nextjs'
+import { Highlighter } from '@/components/ui/highlighter'
 
 export default function Pricing() {
     const { pricing } = CONTENT
@@ -13,7 +14,13 @@ export default function Pricing() {
         <section id="precos" className="py-16 md:py-24">
             <div className="mx-auto max-w-6xl px-6">
                 <div className="mx-auto space-y-6 text-center">
-                    <h2 className="text-center text-4xl font-semibold lg:text-5xl">{pricing.title}</h2>
+                    <h2 className="text-center text-4xl font-semibold lg:text-5xl">
+                        Planos{' '}
+                        <Highlighter action="underline" color="#87CEFA" isView>
+                            transparentes
+                        </Highlighter>{' '}
+                        para cada negócio
+                    </h2>
                     <p className="text-lg text-muted-foreground">{pricing.description}</p>
                     {pricing.badge ? (
                         <div className="mt-2 text-sm font-medium text-emerald-600">{pricing.badge}</div>

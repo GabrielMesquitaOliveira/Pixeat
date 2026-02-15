@@ -4,6 +4,7 @@ import { LayoutDashboard, QrCode, ShoppingCart } from 'lucide-react'
 import { CONTENT } from '@/content'
 import { HeroVideoDialog } from '../ui/hero-video-dialog'
 import { motion } from 'motion/react'
+import { Highlighter } from '@/components/ui/highlighter'
 
 export default function FeaturesSection() {
     return (
@@ -33,7 +34,10 @@ export default function FeaturesSection() {
                         className="text-4xl font-semibold"
                         variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0 } }}
                         transition={{ duration: 0.45, ease: 'easeOut' }}>
-                        {CONTENT.howItWorks.title}
+                        Como funciona na{' '}
+                        <Highlighter action="underline" color="#FF9800" isView>
+                            prática
+                        </Highlighter>
                     </motion.h2>
                     <motion.p
                         className="max-w-sm text-muted-foreground sm:ml-auto"

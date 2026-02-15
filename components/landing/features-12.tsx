@@ -6,6 +6,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
 import { BorderBeam } from '../ui/border-beam'
 import { CONTENT } from '@/content'
+import { Highlighter } from '@/components/ui/highlighter'
 
 export default function Features() {
     const featureItems = CONTENT.features.list.map((feature, index) => ({
@@ -65,7 +66,10 @@ export default function Features() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.5 }}
                         transition={{ ...sectionTransition, delay: 0.15 }}>
-                        {CONTENT.features.title}
+                        Tudo que você precisa em uma{' '}
+                        <Highlighter action="underline" color="#FF9800" isView>
+                            plataforma
+                        </Highlighter>
                     </motion.h2>
                     <motion.p
                         className="text-lg text-muted-foreground"
