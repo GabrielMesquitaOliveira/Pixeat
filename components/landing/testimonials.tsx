@@ -1,6 +1,7 @@
 import { Card, CardContent } from '@/components/ui/card'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { CONTENT } from '@/content'
+import { Highlighter } from '@/components/ui/highlighter'
 // Image import removed (not used)
 
 type Testimonial = (typeof CONTENT)['testimonials']['list'][number]
@@ -10,7 +11,13 @@ export default function Testimonials() {
         <section id="depoimentos" className="py-16 md:py-24">
             <div className="mx-auto max-w-6xl space-y-8 px-6 md:space-y-16">
                 <div className="relative z-10 mx-auto space-y-6 text-center">
-                    <h2 className="text-4xl font-semibold lg:text-5xl">{CONTENT.testimonials.title}</h2>
+                    <h2 className="text-4xl font-semibold lg:text-5xl">
+                        O que nossos{' '}
+                        <Highlighter action="underline" color="#FF9800" isView>
+                            clientes
+                        </Highlighter>{' '}
+                        dizem
+                    </h2>
                     <p className="text-lg text-muted-foreground">{CONTENT.testimonials.description}</p>
                 </div>
 

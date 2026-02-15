@@ -1,6 +1,5 @@
 import CallToAction from "@/components/landing/call-to-action";
 import ContentSection from "@/components/landing/content-1";
-import ContentSection2 from "@/components/landing/content-7";
 import FAQsFour from "@/components/landing/faqs-4";
 import Features from "@/components/landing/features-12";
 import FeaturesSection from "@/components/landing/features-6";
@@ -13,6 +12,7 @@ import { Metadata } from 'next'
 import SchemaMarkup from '@/components/schema-markup'
 import GoogleAnalytics from '@/components/google-analytics'
 import WhatsAppButton from '@/components/whatsapp-button'
+import WheelSmoothScroll from '@/components/landing/wheel-smooth-scroll'
 
 export const metadata: Metadata = {
   title: 'Pixeat - Autoatendimento Inteligente para Restaurantes | QR Code e Reservas Online',
@@ -77,22 +77,24 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
+      <WheelSmoothScroll />
       {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
         <GoogleAnalytics measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
       )}
       <SchemaMarkup />
-      <HeroHeader />
-      <HeroSection />
-      <ContentSection />
-      <ContentSection2 />
-      <FeaturesSection />
-      <Features />
-      <StatsSection />
-      <Pricing />
-      <FAQsFour />
-      <CallToAction />
-      <FooterSection />
-      <WhatsAppButton />
+      <div className="landing-hover-pop">
+        <HeroHeader />
+        <HeroSection />
+        <ContentSection />
+        <FeaturesSection />
+        <Features />
+        <StatsSection />
+        <Pricing />
+        <FAQsFour />
+        <CallToAction />
+        <FooterSection />
+        <WhatsAppButton />
+      </div>
     </>
   );
 }

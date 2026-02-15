@@ -5,6 +5,9 @@ import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import { TextEffect } from '@/components/ui/text-effect'
 import { AnimatedGroup } from '@/components/ui/animated-group'
+import { AuroraBackground } from '@/components/ui/aurora-background'
+import { BorderBeam } from '@/components/ui/border-beam'
+import { ShimmerButton } from '@/components/ui/shimmer-button'
 import { CONTENT } from '../../content'
 import { SignUpButton } from '@clerk/nextjs'
 
@@ -30,8 +33,8 @@ const transitionVariants = {
 
 export default function HeroSection() {
     return (
-        <>
-            <main className="overflow-hidden">
+        <AuroraBackground className="relative h-auto min-h-0 overflow-hidden bg-background text-foreground">
+            <div className="w-full overflow-hidden">
                 <div
                     aria-hidden
                     className="absolute inset-0 isolate hidden opacity-65 contain-strict lg:block">
@@ -132,17 +135,14 @@ export default function HeroSection() {
                                         ...transitionVariants,
                                     }}
                                     className="mt-12 flex flex-col items-center justify-center gap-2 md:flex-row">
-                                    <div
-                                        key={1}
-                                        className="bg-foreground/10 rounded-[calc(var(--radius-xl)+0.125rem)] border p-0.5">
-                                        <SignUpButton mode="modal">
-                                            <Button
-                                                size="lg"
-                                                className="rounded-xl px-5 text-base">
-                                                <span className="text-nowrap">{CONTENT.hero.cta.primary}</span>
-                                            </Button>
-                                        </SignUpButton>
-                                    </div>
+                                    <SignUpButton mode="modal" key={1}
+                                    >
+                                        <ShimmerButton
+                                            background="var(--primary)"
+                                            className="h-11 rounded-xl px-5 text-base">
+                                            <span className="text-nowrap">{CONTENT.hero.cta.primary}</span>
+                                        </ShimmerButton>
+                                    </SignUpButton>
                                     <Button
                                         key={2}
                                         asChild
@@ -171,6 +171,20 @@ export default function HeroSection() {
                             }}>
                             <div className="mask-b-from-55% relative -mr-56 mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-12 md:mt-20">
                                 <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
+                                    <BorderBeam
+                                        size={240}
+                                        duration={4}
+                                        borderWidth={4}
+                                        className="from-primary via-primary/70 to-transparent"
+                                    />
+                                    <BorderBeam
+                                        size={180}
+                                        duration={4}
+                                        delay={2}
+                                        reverse
+                                        borderWidth={4}
+                                        className="from-primary/40 via-primary/20 to-transparent"
+                                    />
                                     <Image
                                         className="bg-background aspect-video relative hidden rounded-2xl dark:block"
                                         src="/software/dashboard.png"
@@ -190,7 +204,7 @@ export default function HeroSection() {
                         </AnimatedGroup>
                     </div>
                 </section>
-            </main>
-        </>
+            </div>
+        </AuroraBackground>
     )
 }

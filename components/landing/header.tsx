@@ -1,4 +1,4 @@
- 'use client'
+'use client'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Menu, X } from 'lucide-react'
@@ -7,10 +7,70 @@ import React from 'react'
 import { cn } from '@/lib/utils'
 import { SignInButton, SignUpButton, UserButton, useUser } from '@clerk/nextjs'
 import { menuItems } from './menu'
+import { ShimmerButton } from '@/components/ui/shimmer-button'
 
 export const HeroHeader = () => {
     const [menuState, setMenuState] = React.useState(false)
     const [isScrolled, setIsScrolled] = React.useState(false)
+
+    const smoothScrollTo = (targetY: number) => {
+        const startY = window.scrollY
+        const distance = targetY - startY
+        const duration = 1100
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+        if (prefersReducedMotion) {
+            window.scrollTo(0, targetY)
+            return
+        }
+
+        const easeInOutCubic = (progress: number) => {
+            return progress < 0.5
+                ? 4 * progress * progress * progress
+                : 1 - Math.pow(-2 * progress + 2, 3) / 2
+        }
+
+        let animationStart: number | null = null
+
+        const step = (currentTime: number) => {
+            if (animationStart === null) {
+                animationStart = currentTime
+            }
+
+            const elapsed = currentTime - animationStart
+            const progress = Math.min(elapsed / duration, 1)
+            const eased = easeInOutCubic(progress)
+
+            window.scrollTo(0, startY + distance * eased)
+
+            if (progress < 1) {
+                requestAnimationFrame(step)
+            }
+        }
+
+        requestAnimationFrame(step)
+    }
+
+    const handleAnchorClick = (href: string) => (event: React.MouseEvent<HTMLAnchorElement>) => {
+        if (!href.startsWith('#')) {
+            return
+        }
+
+        const targetElement = document.querySelector(href)
+        if (!targetElement) {
+            return
+        }
+
+        event.preventDefault()
+
+        const headerOffsetRaw = getComputedStyle(document.documentElement).getPropertyValue('--header-offset')
+        const headerOffset = Number.parseInt(headerOffsetRaw, 10) || 80
+        const targetY = Math.max(0, targetElement.getBoundingClientRect().top + window.scrollY - headerOffset)
+
+        smoothScrollTo(targetY)
+        window.history.replaceState(null, '', href)
+        setMenuState(false)
+    }
 
     React.useEffect(() => {
         const handleScroll = () => {
@@ -24,7 +84,7 @@ export const HeroHeader = () => {
         <header>
             <nav
                 data-state={menuState && 'active'}
-                className="fixed z-10 w-full px-2 z-50">
+                className="fixed z-50 w-full px-2">
                 <div className={cn('mx-auto mt-2 max-w-7xl px-6 transition-all duration-300 lg:px-12', isScrolled && 'bg-background/50 max-w-6xl rounded-2xl border backdrop-blur-lg lg:px-5')}>
                     <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
                         <div className="flex w-full justify-between lg:w-auto">
@@ -50,6 +110,7 @@ export const HeroHeader = () => {
                                     <li key={index}>
                                         <Link
                                             href={item.href}
+                                            onClick={handleAnchorClick(item.href)}
                                             className="text-muted-foreground hover:text-accent-foreground block duration-150">
                                             <span>{item.name}</span>
                                         </Link>
@@ -65,6 +126,7 @@ export const HeroHeader = () => {
                                         <li key={index}>
                                             <Link
                                                 href={item.href}
+                                                onClick={handleAnchorClick(item.href)}
                                                 className="text-muted-foreground hover:text-accent-foreground block duration-150">
                                                 <span>{item.name}</span>
                                             </Link>
@@ -92,11 +154,12 @@ export const HeroHeader = () => {
                                             </Button>
                                         </SignInButton>
                                         <SignUpButton mode="modal">
-                                            <Button
-                                                size="sm"
+                                            <ShimmerButton
+                                                background="var(--primary)"
+                                                className="h-9 rounded-md px-4 text-sm"
                                             >
                                                 <span>Cadastrar</span>
-                                            </Button>
+                                            </ShimmerButton>
                                         </SignUpButton>
                                     </>
                                 )}
