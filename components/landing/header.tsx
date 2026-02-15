@@ -13,6 +13,65 @@ export const HeroHeader = () => {
     const [menuState, setMenuState] = React.useState(false)
     const [isScrolled, setIsScrolled] = React.useState(false)
 
+    const smoothScrollTo = (targetY: number) => {
+        const startY = window.scrollY
+        const distance = targetY - startY
+        const duration = 1100
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+        if (prefersReducedMotion) {
+            window.scrollTo(0, targetY)
+            return
+        }
+
+        const easeInOutCubic = (progress: number) => {
+            return progress < 0.5
+                ? 4 * progress * progress * progress
+                : 1 - Math.pow(-2 * progress + 2, 3) / 2
+        }
+
+        let animationStart: number | null = null
+
+        const step = (currentTime: number) => {
+            if (animationStart === null) {
+                animationStart = currentTime
+            }
+
+            const elapsed = currentTime - animationStart
+            const progress = Math.min(elapsed / duration, 1)
+            const eased = easeInOutCubic(progress)
+
+            window.scrollTo(0, startY + distance * eased)
+
+            if (progress < 1) {
+                requestAnimationFrame(step)
+            }
+        }
+
+        requestAnimationFrame(step)
+    }
+
+    const handleAnchorClick = (href: string) => (event: React.MouseEvent<HTMLAnchorElement>) => {
+        if (!href.startsWith('#')) {
+            return
+        }
+
+        const targetElement = document.querySelector(href)
+        if (!targetElement) {
+            return
+        }
+
+        event.preventDefault()
+
+        const headerOffsetRaw = getComputedStyle(document.documentElement).getPropertyValue('--header-offset')
+        const headerOffset = Number.parseInt(headerOffsetRaw, 10) || 80
+        const targetY = Math.max(0, targetElement.getBoundingClientRect().top + window.scrollY - headerOffset)
+
+        smoothScrollTo(targetY)
+        window.history.replaceState(null, '', href)
+        setMenuState(false)
+    }
+
     React.useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 50)
@@ -51,6 +110,7 @@ export const HeroHeader = () => {
                                     <li key={index}>
                                         <Link
                                             href={item.href}
+                                            onClick={handleAnchorClick(item.href)}
                                             className="text-muted-foreground hover:text-accent-foreground block duration-150">
                                             <span>{item.name}</span>
                                         </Link>
@@ -66,6 +126,7 @@ export const HeroHeader = () => {
                                         <li key={index}>
                                             <Link
                                                 href={item.href}
+                                                onClick={handleAnchorClick(item.href)}
                                                 className="text-muted-foreground hover:text-accent-foreground block duration-150">
                                                 <span>{item.name}</span>
                                             </Link>
