@@ -233,12 +233,22 @@ export const CONTENT = {
 
     badge: "🎉 30 dias grátis • Comece agora sem cartão de crédito",
 
+    labels: {
+      annualBilling: "Cobrança anual",
+      annualSavings: "(Economize 20%)",
+      billedMonthly: "cobrado mensalmente",
+      billedYearly: "cobrado anualmente",
+      popularBadge: "Mais popular",
+      currencySymbol: "R$ ",
+    },
+
     plans: [
       {
         name: "Starter",
         description:
           "Ideal para quem está começando ou quer validar o autoatendimento no seu restaurante. Perfeito para bistrôs, lanchonetes e estabelecimentos de pequeno porte que querem modernizar o atendimento sem investimento inicial.",
         price: "R$ 0",
+        yearlyPrice: "R$ 0",
         period: "/mês • por tempo limitado",
         features: [
           "Até 200 pedidos/mês",
@@ -258,6 +268,7 @@ export const CONTENT = {
         description:
           "Nossa opção mais escolhida. Reúne todos os recursos que restaurantes consolidados precisam para escalar as operações, melhorar a experiência do cliente e aumentar o faturamento mês após mês.",
         price: "R$ 49",
+        yearlyPrice: "R$ 39",
         period: "/mês",
         originalPrice: "R$ 99",
         discount: "50% OFF nos 3 primeiros meses",
@@ -281,7 +292,8 @@ export const CONTENT = {
         description:
           "Solução completa para redes de restaurantes, franquias e grandes operações que precisam de volume ilimitado, recursos avançados e suporte dedicado para garantir excelência operacional.",
         price: "R$ 99",
-        period: "/mês por unidade",
+        yearlyPrice: "R$ 79",
+        period: "/mês",
         features: [
           "Pedidos ilimitados",
           "Tudo do plano Professional +",
