@@ -2,18 +2,24 @@
 
 import { cn } from '@/lib/utils'
 import { BentoGrid, BentoGridItem } from '@/components/ui/bento-grid'
-import {
-    IconBoxAlignRightFilled,
-    IconClipboardCopy,
-    IconFileBroken,
-    IconSignature,
-    IconTableColumn,
-} from '@tabler/icons-react'
+import { Badge } from '@/components/ui/badge'
+import { Progress } from '@/components/ui/progress'
+import { Separator } from '@/components/ui/separator'
+import { TextEffect } from '@/components/ui/text-effect'
+import { AnimatedGroup } from '@/components/ui/animated-group'
+import { NumberTicker } from '@/components/ui/number-ticker'
 import { motion } from 'motion/react'
+import {
+    AlertTriangle,
+    BarChart3,
+    Clock3,
+    Receipt,
+    Users,
+} from 'lucide-react'
 
 export default function BentoGridThirdDemo() {
     return (
-        <BentoGrid className="mx-auto max-w-4xl md:auto-rows-[20rem]">
+        <BentoGrid className="mx-auto max-w-6xl md:auto-rows-[20rem]">
             {items.map((item, i) => (
                 <BentoGridItem
                     key={i}
@@ -29,274 +35,161 @@ export default function BentoGridThirdDemo() {
 }
 
 const SkeletonOne = () => {
-    const variants = {
-        initial: {
-            x: 0,
-        },
-        animate: {
-            x: 10,
-            rotate: 5,
-            transition: {
-                duration: 0.2,
-            },
-        },
-    }
-    const variantsSecond = {
-        initial: {
-            x: 0,
-        },
-        animate: {
-            x: -10,
-            rotate: -5,
-            transition: {
-                duration: 0.2,
-            },
-        },
-    }
-
     return (
         <motion.div
-            initial="initial"
-            whileHover="animate"
-            className="dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex h-full min-h-24 w-full flex-1 flex-col space-y-2"
+            initial={{ opacity: 0, y: 8 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            whileHover={{ y: -1 }}
+            transition={{ duration: 0.8 }}
+            className="bg-muted/30 flex h-full min-h-24 w-full flex-1 flex-col rounded-lg border p-3"
         >
-            <motion.div
-                variants={variants}
-                className="flex flex-row items-center space-x-2 rounded-full border border-neutral-100 bg-white p-2 dark:border-white/20 dark:bg-black"
-            >
-                <div className="h-6 w-6 shrink-0 rounded-full bg-linear-to-r from-pink-500 to-violet-500" />
-                <div className="h-4 w-full rounded-full bg-gray-100 dark:bg-neutral-900" />
+            <motion.div className="mb-2 flex items-center justify-between" animate={{ opacity: [0.9, 1, 0.9] }} transition={{ duration: 4.6, repeat: Infinity }}>
+                <TextEffect per="char" preset="fade" speedSegment={0.7} className="text-xs font-medium">
+                    Tempo médio de espera
+                </TextEffect>
+                <Badge variant="destructive">
+                    +<NumberTicker value={32} suffix="%" />
+                </Badge>
             </motion.div>
-            <motion.div
-                variants={variantsSecond}
-                className="ml-auto flex w-3/4 flex-row items-center space-x-2 rounded-full border border-neutral-100 bg-white p-2 dark:border-white/20 dark:bg-black"
-            >
-                <div className="h-4 w-full rounded-full bg-gray-100 dark:bg-neutral-900" />
-                <div className="h-6 w-6 shrink-0 rounded-full bg-linear-to-r from-pink-500 to-violet-500" />
+            <motion.div initial={{ scaleX: 0.85, opacity: 0.7 }} animate={{ scaleX: 1, opacity: 1 }} transition={{ duration: 1.2 }} className="origin-left">
+                <Progress value={78} className="mb-3" />
             </motion.div>
-            <motion.div
-                variants={variants}
-                className="flex flex-row items-center space-x-2 rounded-full border border-neutral-100 bg-white p-2 dark:border-white/20 dark:bg-black"
+            <AnimatedGroup
+                preset="slide"
+                variants={{ container: { visible: { transition: { staggerChildren: 0.22 } } } }}
+                className="space-y-2 text-xs text-muted-foreground"
             >
-                <div className="h-6 w-6 shrink-0 rounded-full bg-linear-to-r from-pink-500 to-violet-500" />
-                <div className="h-4 w-full rounded-full bg-gray-100 dark:bg-neutral-900" />
-            </motion.div>
+                <div className="flex items-center justify-between"><span>Mesa 12</span><span><NumberTicker value={14} suffix=" min" /></span></div>
+                <div className="flex items-center justify-between"><span>Mesa 07</span><span><NumberTicker value={11} suffix=" min" delay={0.15} /></span></div>
+                <div className="flex items-center justify-between"><span>Balcão</span><span><NumberTicker value={9} suffix=" min" delay={0.3} /></span></div>
+            </AnimatedGroup>
         </motion.div>
     )
 }
 
 const SkeletonTwo = () => {
-    const variants = {
-        initial: {
-            width: 0,
-        },
-        animate: {
-            width: '100%',
-            transition: {
-                duration: 0.2,
-            },
-        },
-        hover: {
-            width: ['0%', '100%'],
-            transition: {
-                duration: 2,
-            },
-        },
-    }
-    const arr = new Array(6).fill(0)
-
     return (
         <motion.div
-            initial="initial"
-            animate="animate"
-            whileHover="hover"
-            className="dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex h-full min-h-24 w-full flex-1 flex-col space-y-2"
+            initial={{ opacity: 0, y: 8 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            whileHover={{ y: -1 }}
+            transition={{ duration: 0.8 }}
+            className="bg-muted/30 flex h-full min-h-24 w-full flex-1 flex-col rounded-lg border p-3"
         >
-            {arr.map((_, i) => (
-                <motion.div
-                    key={'skelenton-two' + i}
-                    variants={variants}
-                    style={{
-                        maxWidth: Math.random() * (100 - 40) + 40 + '%',
-                    }}
-                    className="h-4 w-full flex-row items-center space-x-2 rounded-full border border-neutral-100 bg-neutral-100 p-2 dark:border-white/20 dark:bg-black"
-                ></motion.div>
-            ))}
+            <div className="mb-2 flex items-center justify-between">
+                <TextEffect per="word" preset="fade-in-blur" speedReveal={0.75} className="text-xs font-medium">
+                    Pedidos com correção
+                </TextEffect>
+                <Badge variant="destructive"><NumberTicker value={18} /> hoje</Badge>
+            </div>
+            <Separator className="mb-2" />
+            <AnimatedGroup
+                preset="blur-slide"
+                variants={{ container: { visible: { transition: { staggerChildren: 0.22 } } } }}
+                className="space-y-2 text-xs text-muted-foreground"
+            >
+                <div className="rounded-md border bg-background p-2">Sem cebola → com cebola</div>
+                <div className="rounded-md border bg-background p-2">Ponto da carne incorreto</div>
+                <div className="rounded-md border bg-background p-2">Mesa errada na entrega</div>
+            </AnimatedGroup>
         </motion.div>
     )
 }
 
 const SkeletonThree = () => {
-    const variants = {
-        initial: {
-            backgroundPosition: '0 50%',
-        },
-        animate: {
-            backgroundPosition: ['0, 50%', '100% 50%', '0 50%'],
-        },
-    }
-
     return (
         <motion.div
-            initial="initial"
-            animate="animate"
-            variants={variants}
-            transition={{
-                duration: 5,
-                repeat: Infinity,
-                repeatType: 'reverse',
-            }}
-            className="dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex h-full min-h-24 w-full flex-1 flex-col space-y-2 rounded-lg"
-            style={{
-                background:
-                    'linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)',
-                backgroundSize: '400% 400%',
-            }}
+            initial={{ opacity: 0, y: 8 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            whileHover={{ y: -1 }}
+            transition={{ duration: 0.8 }}
+            className="bg-muted/30 flex h-full min-h-24 w-full flex-1 flex-col rounded-lg border p-3"
         >
-            <motion.div className="h-full w-full rounded-lg"></motion.div>
+            <TextEffect per="word" preset="slide" speedReveal={0.75} className="mb-2 text-xs font-medium">
+                Capacidade no horário de pico
+            </TextEffect>
+            <div className="space-y-3 text-xs text-muted-foreground">
+                <div>
+                    <div className="mb-1 flex justify-between"><span>Equipe ocupada</span><span><NumberTicker value={92} suffix="%" /></span></div>
+                    <motion.div initial={{ scaleX: 0.7, opacity: 0.7 }} whileInView={{ scaleX: 1, opacity: 1 }} viewport={{ once: true }} transition={{ duration: 1.2 }} className="origin-left">
+                        <Progress value={92} />
+                    </motion.div>
+                </div>
+                <div>
+                    <div className="mb-1 flex justify-between"><span>Fila na cozinha</span><span><NumberTicker value={67} suffix="%" delay={0.2} /></span></div>
+                    <motion.div initial={{ scaleX: 0.7, opacity: 0.7 }} whileInView={{ scaleX: 1, opacity: 1 }} viewport={{ once: true }} transition={{ duration: 1.2, delay: 0.12 }} className="origin-left">
+                        <Progress value={67} />
+                    </motion.div>
+                </div>
+            </div>
         </motion.div>
     )
 }
 
 const SkeletonFour = () => {
-    const first = {
-        initial: {
-            x: 20,
-            rotate: -5,
-        },
-        hover: {
-            x: 0,
-            rotate: 0,
-        },
-    }
-    const second = {
-        initial: {
-            x: -20,
-            rotate: 5,
-        },
-        hover: {
-            x: 0,
-            rotate: 0,
-        },
-    }
-
     return (
         <motion.div
-            initial="initial"
-            animate="animate"
-            whileHover="hover"
-            className="dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex h-full min-h-24 w-full flex-1 flex-row space-x-2"
+            initial={{ opacity: 0, y: 8 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            whileHover={{ y: -1 }}
+            transition={{ duration: 0.8 }}
+            className="bg-muted/30 flex h-full min-h-24 w-full flex-1 flex-col rounded-lg border p-3"
         >
-            <motion.div
-                variants={first}
-                className="flex h-full w-1/3 flex-col items-center justify-center rounded-2xl border border-neutral-200 bg-white p-4 dark:border-white/10 dark:bg-black"
+            <AnimatedGroup
+                preset="zoom"
+                variants={{ container: { visible: { transition: { staggerChildren: 0.22 } } } }}
+                className="grid h-full grid-cols-2 gap-2 text-xs"
+                as="div"
+                asChild="div"
             >
-                <img
-                    src="https://pbs.twimg.com/profile_images/1417752099488636931/cs2R59eW_400x400.jpg"
-                    alt="avatar"
-                    height="100"
-                    width="100"
-                    className="h-10 w-10 rounded-full"
-                />
-                <p className="mt-4 text-center text-xs font-semibold text-neutral-500 sm:text-sm">
-                    Just code in Vanilla Javascript
-                </p>
-                <p className="mt-4 rounded-full border border-red-500 bg-red-100 px-2 py-0.5 text-xs text-red-600 dark:bg-red-900/20">
-                    Delusional
-                </p>
-            </motion.div>
-            <motion.div className="relative z-20 flex h-full w-1/3 flex-col items-center justify-center rounded-2xl border border-neutral-200 bg-white p-4 dark:border-white/10 dark:bg-black">
-                <img
-                    src="https://pbs.twimg.com/profile_images/1417752099488636931/cs2R59eW_400x400.jpg"
-                    alt="avatar"
-                    height="100"
-                    width="100"
-                    className="h-10 w-10 rounded-full"
-                />
-                <p className="mt-4 text-center text-xs font-semibold text-neutral-500 sm:text-sm">
-                    Tailwind CSS is cool, you know
-                </p>
-                <p className="mt-4 rounded-full border border-green-500 bg-green-100 px-2 py-0.5 text-xs text-green-600 dark:bg-green-900/20">
-                    Sensible
-                </p>
-            </motion.div>
-            <motion.div
-                variants={second}
-                className="flex h-full w-1/3 flex-col items-center justify-center rounded-2xl border border-neutral-200 bg-white p-4 dark:border-white/10 dark:bg-black"
-            >
-                <img
-                    src="https://pbs.twimg.com/profile_images/1417752099488636931/cs2R59eW_400x400.jpg"
-                    alt="avatar"
-                    height="100"
-                    width="100"
-                    className="h-10 w-10 rounded-full"
-                />
-                <p className="mt-4 text-center text-xs font-semibold text-neutral-500 sm:text-sm">
-                    I love angular, RSC, and Redux.
-                </p>
-                <p className="mt-4 rounded-full border border-orange-500 bg-orange-100 px-2 py-0.5 text-xs text-orange-600 dark:bg-orange-900/20">
-                    Helpless
-                </p>
-            </motion.div>
+                <motion.div className="rounded-md border bg-background p-3" initial={{ opacity: 0, x: -6 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+                    <p className="text-muted-foreground">Tempo médio na mesa</p>
+                    <p className="mt-1 text-lg font-semibold"><NumberTicker value={102} suffix=" min" /></p>
+                    <Badge variant="outline" className="mt-2">Meta: 1h10</Badge>
+                </motion.div>
+                <motion.div className="rounded-md border bg-background p-3" initial={{ opacity: 0, x: 6 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.08 }}>
+                    <p className="text-muted-foreground">Giro por mesa</p>
+                    <p className="mt-1 text-lg font-semibold"><NumberTicker value={2.1} decimalPlaces={1} suffix="x" delay={0.15} /></p>
+                    <Badge variant="destructive" className="mt-2">Abaixo do ideal</Badge>
+                </motion.div>
+                <motion.div className="col-span-2 rounded-md border bg-background p-3 text-muted-foreground" initial={{ opacity: 0, y: 6 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.12 }}>
+                    Turno de jantar com menor rotatividade e fila na entrada.
+                </motion.div>
+            </AnimatedGroup>
         </motion.div>
     )
 }
 
 const SkeletonFive = () => {
-    const variants = {
-        initial: {
-            x: 0,
-        },
-        animate: {
-            x: 10,
-            rotate: 5,
-            transition: {
-                duration: 0.2,
-            },
-        },
-    }
-    const variantsSecond = {
-        initial: {
-            x: 0,
-        },
-        animate: {
-            x: -10,
-            rotate: -5,
-            transition: {
-                duration: 0.2,
-            },
-        },
-    }
-
     return (
         <motion.div
-            initial="initial"
-            whileHover="animate"
-            className="dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex h-full min-h-24 w-full flex-1 flex-col space-y-2"
+            initial={{ opacity: 0, y: 8 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            whileHover={{ y: -1 }}
+            transition={{ duration: 0.8 }}
+            className="bg-muted/30 flex h-full min-h-24 w-full flex-1 flex-col rounded-lg border p-3"
         >
-            <motion.div
-                variants={variants}
-                className="flex flex-row items-start space-x-2 rounded-2xl border border-neutral-100 bg-white p-2 dark:border-white/20 dark:bg-black"
-            >
-                <img
-                    src="https://pbs.twimg.com/profile_images/1417752099488636931/cs2R59eW_400x400.jpg"
-                    alt="avatar"
-                    height="100"
-                    width="100"
-                    className="h-10 w-10 rounded-full"
-                />
-                <p className="text-xs text-neutral-500">
-                    There are a lot of cool framerworks out there like React, Angular,
-                    Vue, Svelte that can make your life ....
-                </p>
+            <motion.div className="mb-2 flex items-center justify-between" animate={{ opacity: [0.9, 1, 0.9] }} transition={{ duration: 4.8, repeat: Infinity }}>
+                <TextEffect per="char" preset="fade" speedSegment={0.7} className="text-xs font-medium">
+                    Visibilidade operacional
+                </TextEffect>
+                <Badge variant="outline">Sem tempo real</Badge>
             </motion.div>
-            <motion.div
-                variants={variantsSecond}
-                className="ml-auto flex w-3/4 flex-row items-center justify-end space-x-2 rounded-full border border-neutral-100 bg-white p-2 dark:border-white/20 dark:bg-black"
+            <Separator className="mb-3" />
+            <AnimatedGroup
+                preset="slide"
+                variants={{ container: { visible: { transition: { staggerChildren: 0.22 } } } }}
+                className="space-y-2 text-xs text-muted-foreground"
             >
-                <p className="text-xs text-neutral-500">Use PHP.</p>
-                <div className="h-6 w-6 shrink-0 rounded-full bg-linear-to-r from-pink-500 to-violet-500" />
-            </motion.div>
+                <div className="flex items-center justify-between"><span>Pedidos atrasados</span><span>--</span></div>
+                <div className="flex items-center justify-between"><span>Taxa de erro por turno</span><span>--</span></div>
+                <div className="flex items-center justify-between"><span>Tempo por mesa</span><span>--</span></div>
+            </AnimatedGroup>
         </motion.div>
     )
 }
@@ -311,7 +204,7 @@ const items = [
         ),
         header: <SkeletonOne />,
         className: 'md:col-span-1',
-        icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
+        icon: <Clock3 className="h-4 w-4 text-neutral-500" />,
     },
     {
         title: 'Erros no lançamento de pedidos',
@@ -322,7 +215,7 @@ const items = [
         ),
         header: <SkeletonTwo />,
         className: 'md:col-span-1',
-        icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
+        icon: <Receipt className="h-4 w-4 text-neutral-500" />,
     },
     {
         title: 'Equipe sobrecarregada nos picos',
@@ -333,7 +226,7 @@ const items = [
         ),
         header: <SkeletonThree />,
         className: 'md:col-span-1',
-        icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
+        icon: <Users className="h-4 w-4 text-neutral-500" />,
     },
     {
         title: 'Baixa conversão de mesa',
@@ -344,7 +237,7 @@ const items = [
         ),
         header: <SkeletonFour />,
         className: 'md:col-span-2',
-        icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
+        icon: <AlertTriangle className="h-4 w-4 text-neutral-500" />,
     },
     {
         title: 'Falta de dados para decidir',
@@ -355,6 +248,6 @@ const items = [
         ),
         header: <SkeletonFive />,
         className: 'md:col-span-1',
-        icon: <IconBoxAlignRightFilled className="h-4 w-4 text-neutral-500" />,
+        icon: <BarChart3 className="h-4 w-4 text-neutral-500" />,
     },
 ]

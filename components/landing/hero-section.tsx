@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import { TextEffect } from '@/components/ui/text-effect'
 import { AnimatedGroup } from '@/components/ui/animated-group'
+import { AuroraBackground } from '@/components/ui/aurora-background'
 import { CONTENT } from '../../content'
 import { SignUpButton } from '@clerk/nextjs'
 
@@ -30,8 +31,8 @@ const transitionVariants = {
 
 export default function HeroSection() {
     return (
-        <>
-            <main className="overflow-hidden">
+        <AuroraBackground className="relative h-auto min-h-0 overflow-hidden bg-background text-foreground">
+            <div className="w-full overflow-hidden">
                 <div
                     aria-hidden
                     className="absolute inset-0 isolate hidden opacity-65 contain-strict lg:block">
@@ -190,7 +191,7 @@ export default function HeroSection() {
                         </AnimatedGroup>
                     </div>
                 </section>
-            </main>
-        </>
+            </div>
+        </AuroraBackground>
     )
 }
