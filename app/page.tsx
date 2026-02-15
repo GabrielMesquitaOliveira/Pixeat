@@ -1,6 +1,5 @@
 import CallToAction from "@/components/landing/call-to-action";
 import ContentSection from "@/components/landing/content-1";
-import ContentSection2 from "@/components/landing/content-7";
 import FAQsFour from "@/components/landing/faqs-4";
 import Features from "@/components/landing/features-12";
 import FeaturesSection from "@/components/landing/features-6";
@@ -84,7 +83,6 @@ export default function Home() {
       <HeroHeader />
       <HeroSection />
       <ContentSection />
-      <ContentSection2 />
       <FeaturesSection />
       <Features />
       <StatsSection />
